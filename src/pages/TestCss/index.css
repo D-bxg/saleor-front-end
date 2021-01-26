@@ -1,0 +1,42 @@
+.mask {
+  height: 100vh;
+  width: calc(100vw - 17px);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  top: 0;
+  position: fixed;
+  background-color: rgba(255, 191, 191, 0.623);
+  z-index: -1;
+}
+
+.testcss {
+  height: auto;
+  width: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.testcss__slider {
+  z-index: 100;
+  height: 100vh;
+  width: 20vw;
+  background-color: #ffa9a9;
+}
+
+.testcss__slider--hidden {
+  top: 0;
+  position: fixed;
+  left: -20vw;
+}
+
+/*
+&__vw {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(206, 206, 206);
+    transform: translateX(50vw);
+    &--hidden {
+        transform: translate(0);
+    }
+  }
+*/

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 通过iframe方式引入InDraw结构式编辑器 iframe的大小样式可以自行调整 -->
+<iframe width="480px" height="460px" id="IndrawIframe" src="./indraw/indraw.html" frameborder="0" style="border:1px solid"></iframe>
+
+<input type="hidden" id="tttest" name="mrv" value="none"/>
+
+<!--<script src="https://www.layuicdn.com/layui/layui.js"></script>-->
+<script type="text/javascript">
+    // 获取SMILES
+    /*function getSMILES() {
+        // 获取InDraw所在的iframe元素
+        var indrawIframe = document.getElementById('IndrawIframe');
+        // 获取InDraw实例
+        var indraw = indrawIframe.contentWindow.indraw;
+        // 调用InDraw接口：getSMILES
+        try {
+            var smilesInfo = indraw.getSMILES();
+        } catch (e) {
+            smilesInfo = ""
+        }
+        // alert(smilesInfo);
+        // parent寻找父结点 的 dom 结点
+        var dom = parent.document.getElementById("molecule_flag")
+        //触发react的onInput
+        var ev = new Event('input', {bubbles: true});
+        ev.simulated = true;
+        dom.value = smilesInfo;
+        // 点击 get smils是否应该 更新的
+        console.log("现在打印到了demo.html")
+        console.log(dom.value)
+        console.log('dom 是', dom)
+        console.log('dom的 value 是', dom.value)
+        if(dom.value == "" || dom.value == null){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.msg('还没有画分子式', {
+                    offset: 'auto',
+                    anim: 6
+                });
+            })
+        }
+        // 此时 value 的值并没有进行改变
+        // 触发事件
+        dom.dispatchEvent(ev);
+    }*/
+
+
+    // 获取MOL
+    function getMOL() {
+        // 获取InDraw所在的iframe元素
+        var indrawIframe = document.getElementById('IndrawIframe');
+
+        // 获取InDraw实例
+        var indraw = indrawIframe.contentWindow.indraw;
+
+        // 调用InDraw接口：getMOL
+        var molInfo = indraw.getMOL();
+        alert(molInfo);
+    }
+</script>
+</body>
+</html>

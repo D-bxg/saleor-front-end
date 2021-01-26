@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,30 C28.8071187,30 50,21.627417 50,15 C50,8.372583 28.8071187,0 15,0 C1.19288126,0 0,8.372583 0,15 C0,21.627417 1.19288126,30 15,30 Z" id="path-1"></path>
+        <linearGradient x1="4.13807583%" y1="39.6071047%" x2="100%" y2="39.6071047%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.198086504" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-32.4%" y="-64.5%" width="164.8%" height="229.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="4.31919643" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="8.26137796%" y1="35.2756076%" x2="64.6286691%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.198086504" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-45.5%" y="-109.1%" width="191.0%" height="318.2%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800000012">
+        <g id="8" transform="translate(15.000000, 25.000000) scale(-1, 1) rotate(90.000000) translate(-15.000000, -25.000000) translate(-10.000000, 10.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+            <path d="M15,29 C28.8071187,29 50,21.627417 50,15 C50,8.372583 28.8071187,1 15,1 C1.19288126,1 0,8.372583 0,15 C0,21.627417 1.19288126,29 15,29 Z" id="Oval" fill="#000000" mask="url(#mask-2)"></path>
+            <path d="M16,23.090526 C27.045695,23.090526 44,18.0408238 44,13.045263 C44,8.04970218 27.045695,3 16,3 C4.954305,3 4,8.04970218 4,13.045263 C4,18.0408238 4.954305,23.090526 16,23.090526 Z" id="Oval" fill="url(#linearGradient-3)" filter="url(#filter-4)" mask="url(#mask-2)"></path>
+            <path d="M11.1890783,17 C18.4732051,17 29.3781566,13.9852814 29.3781566,11.5 C29.3781566,9.01471863 18.4732051,6 11.1890783,6 C3.9049515,6 3,9.01471863 3,11.5 C3,13.9852814 3.9049515,17 11.1890783,17 Z" id="Oval" fill="url(#linearGradient-5)" filter="url(#filter-6)" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

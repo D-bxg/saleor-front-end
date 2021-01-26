@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="正电荷" transform="translate(-7.000000, -6.000000)" fill="#4C4C4C">
+            <g id="Group" transform="translate(7.000000, 6.000000)">
+                <path d="M13,26 C5.82029825,26 0,20.1797017 0,13 C0,5.82029825 5.82029825,0 13,0 C20.1797017,0 26,5.82029825 26,13 C26,20.1797017 20.1797017,26 13,26 Z M13,25 C19.627417,25 25,19.627417 25,13 C25,6.372583 19.627417,1 13,1 C6.372583,1 1,6.372583 1,13 C1,19.627417 6.372583,25 13,25 Z" id="Oval" fill-rule="nonzero"></path>
+                <path d="M12,12 L12,3 L14,3 L14,12 L23,12 L23,14 L14,14 L14,23 L12,23 L12,14 L3,14 L3,12 L12,12 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

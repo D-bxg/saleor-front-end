@@ -1,0 +1,71 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160"
+     height="58.64" x="0" y="0" viewBox="520.5 349.18 170 58.64">
+    <defs>
+        <linearGradient id="bUwKgOloJNRl" x1="120" x2="100" y1="0" y2="-34.64" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="PZyMJqCWxChA" x1="100" x2="60" y1="-34.64" y2="-34.64" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="exmJlvzHPrrZ" x1="60" x2="40" y1="-34.64" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="eEFApzPDetBu" x1="40" x2="0" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#304ff7"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <g>
+            <rect fill="rgb(255,255,255)" stroke="none" x="-12" y="-46.64" width="144" height="58.64"
+                  fill-opacity="0"></rect>
+        </g>
+        <g transform="matrix(1,0,0,1,553.5,395.82)">
+            <g>
+                <text fill="#000000" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="126.860595703125" y="0" text-anchor="end"
+                      dominant-baseline="central">R
+                </text>
+            </g>
+            <g>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="0" y="0" text-anchor="middle"
+                      dominant-baseline="central">N
+                </text>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="-9.800851004464286" y="0" text-anchor="end"
+                      dominant-baseline="central">H
+                </text>
+                <g transform="translate(-0.4234935619212963,0) scale(0.8888888888888888,0.8888888888888888)">
+                    <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="11px"
+                          font-style="normal" font-weight="bold" text-decoration="normal" x="-3.8114420572916665" y="0"
+                          text-anchor="end" dominant-baseline="text-before-edge">2
+                    </text>
+                </g>
+            </g>
+            <g>
+                <path fill="url(#bUwKgOloJNRl)" stroke="url(#bUwKgOloJNRl)" paint-order="fill stroke markers"
+                      d=" M 116.24990099636986 -6.495171474287409 L 100 -34.64" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#PZyMJqCWxChA)" stroke="url(#PZyMJqCWxChA)" paint-order="fill stroke markers"
+                      d=" M 100 -34.64 L 60 -34.64" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#exmJlvzHPrrZ)" stroke="url(#exmJlvzHPrrZ)" paint-order="fill stroke markers"
+                      d=" M 60 -34.64 L 40 0" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#eEFApzPDetBu)" stroke="url(#eEFApzPDetBu)" paint-order="fill stroke markers"
+                      d=" M 40 0 L 8.7908935546875 0" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,5 @@
+.footer {
+  height: 60vh;
+  width: calc(100vw-17px);
+  background-color: #009494;
+}

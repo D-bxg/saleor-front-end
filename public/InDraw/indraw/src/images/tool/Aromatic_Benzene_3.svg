@@ -1,0 +1,87 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="61"
+     x="0" y="0" viewBox="200 358 75 61">
+    <defs>
+        <linearGradient id="KuZqNVaFzzEN" x1="297.0048px" x2="338.57280000000003px" y1="571.5408px"
+                        y2="587.3616000000001px" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="ATFEDklqSakO" x1="380.1408px" x2="338.57280000000003px" y1="571.5408px"
+                        y2="587.3616000000001px" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="viTTxoMLdfvV" x1="380.1408px" x2="380.1408px" y1="571.5408px" y2="539.8896px"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="BXyloPzMlKtm" x1="380.1408px" x2="338.57280000000003px" y1="539.8896px" y2="524.0688px"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="ByEetoROoRwJ" x1="338.57280000000003px" x2="297.0048px" y1="524.0688px" y2="539.8896px"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="erJRqZPozfEB" x1="297.0048px" x2="297.0048px" y1="539.8896px" y2="571.5408px"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <g>
+            <rect fill="none" stroke="none" x="200" y="358" width="75" height="61"></rect>
+            <rect fill="none" stroke="none" x="200" y="358" width="75" height="61" fill-opacity="1"></rect>
+            <g transform="scale(0.7,0.7)">
+                <g>
+                    <path fill="url(#KuZqNVaFzzEN)" stroke="url(#KuZqNVaFzzEN)" paint-order="stroke fill markers"
+                          d=" M 297.0048 571.5408 L 338.57280000000026 583.0235949543479 L 338.57280000000003 587.3616000000001 L 338.5727999999999 592.0230497960671 Z"
+                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.752"
+                          stroke-dasharray=""></path>
+                </g>
+                <g>
+                    <path fill="url(#ATFEDklqSakO)" stroke="url(#ATFEDklqSakO)" paint-order="stroke fill markers"
+                          d=" M 380.1408 571.5408 L 338.5727999999999 592.0230497960671 L 338.57280000000003 587.3616000000001 L 338.5728000000003 583.0235949543479 Z"
+                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.752"
+                          stroke-dasharray=""></path>
+                </g>
+                <g>
+                    <path fill="url(#viTTxoMLdfvV)" stroke="url(#viTTxoMLdfvV)" paint-order="fill stroke markers"
+                          d=" M 380.1408 571.5408 L 380.1408 539.8896" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-miterlimit="10" stroke-width="1.752" stroke-dasharray=""></path>
+                    <g></g>
+                </g>
+                <g>
+                    <path fill="url(#BXyloPzMlKtm)" stroke="url(#BXyloPzMlKtm)" paint-order="fill stroke markers"
+                          d=" M 380.1408 539.8896 L 338.57280000000003 524.0688" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.752"
+                          stroke-dasharray=""></path>
+                    <g></g>
+                </g>
+                <g>
+                    <path fill="url(#ByEetoROoRwJ)" stroke="url(#ByEetoROoRwJ)" paint-order="fill stroke markers"
+                          d=" M 338.57280000000003 524.0688 L 297.0048 539.8896" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.752"
+                          stroke-dasharray=""></path>
+                    <g></g>
+                </g>
+                <g>
+                    <path fill="url(#erJRqZPozfEB)" stroke="url(#erJRqZPozfEB)" paint-order="fill stroke markers"
+                          d=" M 297.0048 539.8896 L 297.0048 571.5408" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-miterlimit="10" stroke-width="1.752" stroke-dasharray=""></path>
+                    <g></g>
+                </g>
+                <g>
+                    <path fill="none" stroke="#000000" paint-order="fill stroke markers"
+                          d=" M 322.18726419649795 573.0701861829755 Q 338.57280000000003 577.9487031871641 354.9583358035021 573.0701861829755 Q 371.3438716070042 568.1916691787867 371.3438716070042 555.7152 Q 371.3438716070042 543.2387308212133 354.9583358035021 538.3602138170246 Q 338.57280000000003 533.4816968128359 322.18726419649795 538.3602138170246 Q 305.80172839299587 543.2387308212133 305.80172839299587 555.7152 Q 305.80172839299587 568.1916691787867 322.18726419649795 573.0701861829755"
+                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.752"
+                          stroke-dasharray=""></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

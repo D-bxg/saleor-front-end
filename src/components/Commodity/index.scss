@@ -1,0 +1,33 @@
+.commodity {
+    width: calc(100vw-17px);
+    height: 100vh;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    padding: 8rem;
+    position: relative;
+  &__afp {
+    width: 10rem;
+    height: 10rem;
+    background-color: yellowgreen;
+  }
+  &__afp:hover{
+    animation: expand 1s ease-in forwards;
+  }
+}
+@keyframes expand{
+  0%{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 8rem;
+    left: 8rem;
+  }
+  100%{
+    width: calc(100vw - 17px);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

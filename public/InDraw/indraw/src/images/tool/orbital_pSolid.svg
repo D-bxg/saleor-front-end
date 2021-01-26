@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="32px" viewBox="0 0 16 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3,20.5 C9.90355937,20.5 20.5,15.8137085 20.5,12.5 C20.5,9.1862915 9.90355937,4.5 3,4.5 C-3.90355937,4.5 -4.5,9.1862915 -4.5,12.5 C-4.5,15.8137085 -3.90355937,20.5 3,20.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11">
+            <path d="M2.5,44.5 C9.39386755,44.5 20.5,39.8185283 20.5,37 C20.5,34.1814717 9.39386755,29.5 2.5,29.5 C-2.87112819,29.5 -4.5,32.0522749 -4.5,37 C-4.5,41.9477251 -2.87112819,44.5 2.5,44.5 Z" id="Oval" stroke="#000000" fill="#FFFFFF" transform="translate(8.000000, 37.000000) scale(1, -1) rotate(90.000000) translate(-8.000000, -37.000000) "></path>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" transform="translate(8.000000, 12.500000) rotate(90.000000) translate(-8.000000, -12.500000) " xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

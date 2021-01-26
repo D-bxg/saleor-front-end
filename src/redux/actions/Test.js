@@ -1,0 +1,1 @@
+export const fun_one = data=>({type:'type_one',data})

@@ -1,0 +1,73 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="98.28399999999999" height="84" x="0" y="0" viewBox="560.858 336.5 93.28399999999999 84">
+    <defs>
+        <linearGradient id="ssVQkyGdDTQI" x1="69.28399999999999" x2="34.64" y1="0" y2="-20"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#304ff7"></stop>
+        </linearGradient>
+        <linearGradient id="uWvnTFEOFdRu" x1="34.64" x2="34.64" y1="-20" y2="-60" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#304ff7"></stop>
+            <stop offset="0.6" stop-color="#888888"></stop>
+        </linearGradient>
+        <linearGradient id="fMGltvGvKJIP" x1="34.64" x2="0" y1="-20" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#304ff7"></stop>
+            <stop offset="0.6" stop-color="#888888"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <g>
+            <rect fill="rgb(255,255,255)" stroke="none" x="-12" y="-72" width="93.28399999999999" height="84"
+                  fill-opacity="0"></rect>
+        </g>
+        <g transform="matrix(1,0,0,1,578.858,408.5)">
+            <g>
+                <text fill="#000000" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="76.14459570312499" y="0" text-anchor="end"
+                      dominant-baseline="central">R
+                </text>
+            </g>
+            <g>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="34.64" y="-20" text-anchor="middle"
+                      dominant-baseline="central">N
+                </text>
+            </g>
+            <g>
+                <text fill="#888888" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="34.64" y="-60" text-anchor="middle"
+                      dominant-baseline="central">H
+                </text>
+                <text fill="#888888" stroke="none" font-family="arial, sans-serif" font-size="11px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="25.4925390625" y="-60" text-anchor="end"
+                      dominant-baseline="text-after-edge">2
+                </text>
+            </g>
+            <g>
+                <text fill="#888888" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="0" y="0" text-anchor="middle"
+                      dominant-baseline="central">H
+                </text>
+                <text fill="#888888" stroke="none" font-family="arial, sans-serif" font-size="11px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="-9.1474609375" y="0" text-anchor="end"
+                      dominant-baseline="text-after-edge">2
+                </text>
+            </g>
+            <g>
+                <path fill="url(#ssVQkyGdDTQI)" stroke="url(#ssVQkyGdDTQI)" paint-order="fill stroke markers"
+                      d=" M 61.8376387988319 -4.298788362295404 L 42.086361201168096 -15.701211637704596"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#uWvnTFEOFdRu)" stroke="url(#uWvnTFEOFdRu)" paint-order="fill stroke markers"
+                      d=" M 34.64 -29 L 34.64 -51" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#fMGltvGvKJIP)" stroke="url(#fMGltvGvKJIP)" paint-order="fill stroke markers"
+                      d=" M 27.19391868567963 -15.700876839306945 L 7.446081314320371 -4.299123160693055"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+        </g>
+    </g>
+</svg>

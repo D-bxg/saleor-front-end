@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>13</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,34 C14.9035594,34 25,26.5976562 25,25 C25,23.4023438 14.9035594,16 8,16 C1.09644063,16 0,21.6862915 0,25 C0,28.3137085 1.09644063,34 8,34 Z" id="path-1"></path>
+        <path d="M33,34 C39.9035594,34 50,26.5976562 50,25 C50,23.4023438 39.9035594,16 33,16 C26.0964406,16 25,21.6862915 25,25 C25,28.3137085 26.0964406,34 33,34 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="13" transform="translate(25.000000, 25.000000) scale(-1, 1) rotate(90.000000) translate(-25.000000, -25.000000) ">
+            <path d="M20.5,46 C23.4596834,46 27.460249,44.3653737 31.5704666,41.7507324 C34.6344269,39.801649 37.5,37.3467631 37.5,37 C37.5,36.6837687 34.6741676,34.5034851 31.5928948,32.7627241 C27.5014339,30.4512587 23.4798805,29 20.5,29 C15.2219674,29 13.5,32.1235103 13.5,37.5 C13.5,42.8764897 15.2219674,46 20.5,46 Z" id="Oval" stroke="#000000" fill="#FFFFFF" transform="translate(25.500000, 37.500000) rotate(270.000000) translate(-25.500000, -37.500000) "></path>
+            <path d="M20.1376953,21 C23.1071978,21 27.1177238,19.4570123 31.2191119,16.9939632 C34.2915559,15.1488365 37.1376953,12.831742 37.1376953,12.5 C37.1376953,12.168258 34.2915559,9.85116348 31.2191119,8.00603682 C27.1177238,5.5429877 23.1071978,4 20.1376953,4 C14.8596627,4 13.1376953,7.12351028 13.1376953,12.5 C13.1376953,17.8764897 14.8596627,21 20.1376953,21 Z" id="Oval" stroke="#000000" fill="#FFFFFF" transform="translate(25.137695, 12.500000) rotate(90.000000) translate(-25.137695, -12.500000) "></path>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="oval" fill="#000000" xlink:href="#path-1"></use>
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <use id="oval" fill="#000000" transform="translate(37.500000, 25.000000) scale(-1, 1) rotate(360.000000) translate(-37.500000, -25.000000) " xlink:href="#path-3"></use>
+        </g>
+    </g>
+</svg>

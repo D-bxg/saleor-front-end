@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>indraw</title>
+    <meta name="author" content="integle" />
+    <meta name="keywords" content="integle" />
+    <link type="text/css" rel="stylesheet" href="src/css/indraw.min.css?t=20181010" />
+    <style>
+        .trapezoid {
+            width: 470px;
+            left: calc(50% - 235px);
+        }
+
+
+        .text-toolbar {
+            display: none;
+            left: auto;
+            top: 77px;
+        }
+
+        .auto-text-head {
+            height: 55px;
+            border-radius: 5px;
+        }
+
+        #font-tool-1 {
+            background: rgba(58, 58, 58, 1);
+            text-align: center;
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        #font-tool-2 {
+            display: inline;
+        }
+
+        #font-tool-3 {
+            display: inline;
+            float: right;
+            font-size: 12px;
+            margin-right: 10px;
+            background: transparent;
+            color: rgba(153, 153, 153, 1);
+            border: none;
+        }
+
+        #font-tool-3:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        #vertical-tools {
+            background: #F3F3F3;
+            width: 100%;
+            height: 77px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        #svg-template{
+            top: 40px !important;
+        }
+        .modalbox-main{
+            width:95% !important;
+            left: 286px;
+        }
+        #text-searchBar{
+            left: 26px;
+        }
+
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <div id="chemview">
+        <!--<div id="menu"></div> -->
+        <div id="content" style="top:0;">
+            <div id="main-layer" class="layer layout-vsplit">
+                <div id="sketcher" style="right:0;">
+                    <div id="molpad" class="sketcher">
+                        <div id="vertical-tools" class="vertical-tools-top shown" style="">
+                            <!--class="vertical-tools-bottom"-->
+                            <div class="trapezoid opacity1 trapezoid">
+                                <div class="trapezoid-box">
+                                    <div class="vertical-tools-main clearfix">
+                                        <div class="vertical-tools-inner clearfix">
+                                            <div id="action-mp-rect" class="tool-button primary-tool"
+                                                title="Rectangle selection"></div>
+                                            <div id="action-mp-lasso"
+                                                class="tool-button primary-tool tool-button-selected"
+                                                title="Lasso selection"></div>
+                                            <div id="action-mp-drag" class="tool-button primary-tool" title="Move all">
+                                            </div>
+                                            <div id="action-mp-undo"
+                                                class="tool-button tool-button-horizontal tool-button-disabled"
+                                                title="Undo"></div>
+                                            <div id="action-mp-redo"
+                                                class="tool-button tool-button-horizontal tool-button-disabled"
+                                                title="Redo"></div>
+                                            <div id="action-mp-eraser" class="tool-button primary-tool" title="Erase">
+                                            </div>
+                                            <div id="action-mp-clear" class="tool-button tool-button-horizontal"
+                                                title="Clear all"></div>
+                                            <div id="action-mp-import"
+                                                class="tool-button tool-button-horizontal primary-tool hide_in_ie hide_in_edge"
+                                                title="导入" data-name="modalbox" data-title="Open" data-class="xzt"
+                                                data-content="<div class=&quot;modal-import&quot;><ul class=&quot;modal-import-head clearfix&quot;><li class=&quot;active&quot;><a href=&quot;javascript:;&quot;>上传文件</a></li><li><a href=&quot;javascript:;&quot;>粘贴内容</a></li></ul><div class=&quot;modal-import-content&quot;><div class=&quot;modal-import-content-item&quot;><p data-name=&quot;drag-file&quot;><input type=&quot;file&quot; data-name=&quot;upload-file&quot;><span>拖拽文件到此区域并松开鼠标或点击上传</span><span>（文件格式支持 int 、mol、cdx、cdxml）</span></p></div><div class=&quot;modal-import-content-item hide&quot; ><textarea data-name=&quot;edit-upload-content&quot; placeholder=&quot;在此区域粘贴int、mol、smiles，然后点击导入按钮即可&quot;></textarea><p class=&quot;modal-import-content-button&quot;><a href=&quot;javascript:;&quot; data-name=&quot;empty-content&quot;>清空</a><a href=&quot;javascript:;&quot; data-name=&quot;import-button&quot;>导入</a></p></div></div></div>">
+                                            </div>
+                                            <div id="action-mp-export"
+                                                class="tool-button tool-button-horizontal primary-tool hide_in_ie hide_in_edge"
+                                                title="导出" data-name="modalbox" data-title="Save"
+                                                data-content="<div class=&quot;modal-export&quot;><div class=&quot;modal-export-head clearfix&quot;><span class=&quot;modal-export-type&quot;>请选择导出文件的类型：</span><div data-name=&quot;imitateSelect&quot; ><select><option value=&quot;mol&quot;>MDL Molfile ( * .mol )</option><option value=&quot;smiles&quot;>SMILES</option><option value=&quot;cdx&quot;>ChemDraw ( * .cdx )</option><option value=&quot;cdxml&quot;>ChemDraw ( * .cdxml )</option><option value=&quot;int&quot; selected>Integle (* .int)</option></select></div></div><div class=&quot;modal-export-content&quot;><div class=&quot;modal-export-content-text&quot;><div data-name=&quot;export-scroll&quot; class=&quot;tinyscroll&quot;><div class=&quot;tinyscroll-content&quot;><div contenteditable=&quot;true&quot; data-name=&quot;export-data&quot;></div></div></div></div><a href=&quot;javascript:;&quot; data-name=&quot;download-file&quot;>下载</a></div></div>">
+                                            </div>
+                                            <div id="action-mp-textSearch" class="tool-button primary-tool"
+                                                 title="Text search" ></div> <!--增加文本搜索框 add by hkk 2019/2/13-->
+                                            <div id="action-mp-textfield"
+                                                class="tool-button primary-tool character-tools" title="输入文本">A</div>
+
+                                            <div id="action-mp-atom-c"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Carbon">C</div>
+                                            <div id="action-mp-atom-h"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Hydrogen">H</div>
+                                            <div id="action-mp-atom-n"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Nitrogen">N</div>
+                                            <div id="action-mp-atom-o"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Oxygen">O</div>
+                                            <div id="action-mp-atom-s"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Sulfur">S</div>
+                                            <div id="action-mp-atom-cl"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Chlorine">Cl</div>
+                                            <div id="action-mp-atom-br"
+                                                class="tool-button primary-tool tool-element element-colored character-tools"
+                                                title="Bromine">Br</div>
+                                            <div id="action-mp-periodictable" class="tool-button primary-tool"
+                                                title="Periodic Table"></div>
+
+                                            <div id="setColor"
+                                                class="tool-button tool-button-horizontal tool-button-disabled"
+                                                title="Colors" style="position: relative;">
+                                                <div id="action-mp-selectColor"></div>
+                                                <div class="select-color clearfix" style="display: none;">
+                                                    <div class="color-panel-1">
+                                                        <div class="color-title">主题颜色</div>
+                                                        <div class="theme-colors">
+                                                            <div class="color-row"><span class="color-block"
+                                                                    style="background-color: #FFFFFF;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #000001;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #EEECE1;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #1F497D;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #4F81BD;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #C0504D;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #9BBB59;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #8064A2;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #4BACC6;"></span><span
+                                                                    class="color-block"
+                                                                    style="background-color: #F79646;"></span></div>
+                                                            <div class="color-row auto-height">
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #F2F2F2;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #D8D8D8;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #BFBFBF;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #A5A5A5;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #7F7F7F;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #7F7F7F;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #595959;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #3F3F3F;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #262626;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #0C0C0C;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #DDD9C3;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #C4BD97;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #938953;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #494429;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #1D1B10;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #C6D9F0;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #8DB3E2;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #548DD4;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #17365D;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #0F243E;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #DBE5F1;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #B8CCE4;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #95B3D7;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #366092;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #0C0C0C;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #F2DCDB;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #E5B9B7;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #D99694;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #953734;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #632423;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #EBF1DD;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #D7E3BC;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #C3D69B;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #76923C;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #4F6128;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #E5E0EC;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #CCC1D9;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #B2A2C7;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #5F497A;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #3F3151;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #DBEEF3;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #B7DDE8;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #92CDDC;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #31859B;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #205867;"></span></div>
+                                                                <div class="color-column"><span
+                                                                        class="color-block no-border-bottom"
+                                                                        style="background-color: #FDEADA;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #FBD5B5;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #FAC08F;"></span><span
+                                                                        class="color-block no-border-top no-border-bottom"
+                                                                        style="background-color: #E36C09;"></span><span
+                                                                        class="color-block no-border-top"
+                                                                        style="background-color: #974806;"></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="color-title standard-colors">标准颜色</div>
+                                                        <div class="color-row"><span class="color-block"
+                                                                style="background-color: #C00000;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #FF0000;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #FFC000;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #FFFF00;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #92D050;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #00B050;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #00B0F0;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #0070C0;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #002060;"></span><span
+                                                                class="color-block"
+                                                                style="background-color: #7030A0;"></span></div>
+                                                        <div class="color-title other-colors">其他颜色...</div>
+                                                    </div>
+                                                    <div class="color-panel-2" style="display: none;">
+                                                        <div class="select-color-main cp-default">
+                                                            <div class="picker-wrapper">
+                                                                <div class="picker">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1" width="100%" height="100%">
+                                                                        <defs>
+                                                                            <linearGradient id="gradient-black-0"
+                                                                                x1="0%" y1="100%" x2="0%" y2="0%">
+                                                                                <stop offset="0%" stop-color="#000000"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="100%" stop-color="#CC9A81"
+                                                                                    stop-opacity="0"></stop>
+                                                                            </linearGradient>
+                                                                            <linearGradient id="gradient-white-0"
+                                                                                x1="0%" y1="100%" x2="100%" y2="100%">
+                                                                                <stop offset="0%" stop-color="#FFFFFF"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="100%" stop-color="#CC9A81"
+                                                                                    stop-opacity="0"></stop>
+                                                                            </linearGradient>
+                                                                        </defs>
+                                                                        <rect x="0" y="0" width="100%" height="100%"
+                                                                            fill="url(http://eln.integle.com/indraw/index.html#gradient-white-0)">
+                                                                        </rect>
+                                                                        <rect x="0" y="0" width="100%" height="100%"
+                                                                            fill="url(http://eln.integle.com/indraw/index.html#gradient-black-0)">
+                                                                        </rect>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="picker-indicator"
+                                                                    style="pointer-events: none;"></div>
+                                                            </div>
+                                                            <div class="slide-wrapper">
+                                                                <div class="slide">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        version="1.1" width="100%" height="100%">
+                                                                        <defs>
+                                                                            <linearGradient id="gradient-hsv-0" x1="0%"
+                                                                                y1="100%" x2="0%" y2="0%">
+                                                                                <stop offset="0%" stop-color="#FF0000"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="13%" stop-color="#FF00FF"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="25%" stop-color="#8000FF"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="38%" stop-color="#0040FF"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="50%" stop-color="#00FFFF"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="63%" stop-color="#00FF40"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="75%" stop-color="#0BED00"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="88%" stop-color="#FFFF00"
+                                                                                    stop-opacity="1"></stop>
+                                                                                <stop offset="100%" stop-color="#FF0000"
+                                                                                    stop-opacity="1"></stop>
+                                                                            </linearGradient>
+                                                                        </defs>
+                                                                        <rect x="0" y="0" width="100%" height="100%"
+                                                                            fill="url(http://eln.integle.com/indraw/index.html#gradient-hsv-0)">
+                                                                        </rect>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="slide-indicator"
+                                                                    style="pointer-events: none;"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="select-color-bottom clearfix"><span
+                                                                class="select-color-bg" id="bg"></span><input
+                                                                type="text" class="select-color-input"
+                                                                id="colorValue"><a href="javascript:;"
+                                                                class="select-color-btn" id="action-mp-setColor">确定</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="action-mp-center" class="tool-button tool-button-horizontal"
+                                                title="获取属性"></div>
+
+                                            <!-- add by hkk 2019/3/29 加入svg模板-->
+                                            <div id="action-mp-svgtemplate-203" data-button=""
+                                                class="tool-button primary-tool" style="position:relative;"
+                                                title="default Template">
+                                                <div class="act-wrap" id="svg-template"
+                                                    style="height:400px; width: 738px;top:40px;left:-698px; overflow: auto">
+                                                    <div id="action-mp-svgtemplate-25"
+                                                        class="tool-button primary-too svgtemplate" title="beaker">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-1"
+                                                        class="tool-button primary-too svgtemplate" title="football"
+                                                        style="display: none;"></div>
+                                                    <div id="action-mp-svgtemplate-3"
+                                                        class="tool-button primary-too svgtemplate" title="tiger"
+                                                        style="display: none;"></div>
+                                                    <div id="action-mp-svgtemplate-4"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="tri_blloon_falsk"></div>
+                                                    <div id="action-mp-svgtemplate-5"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="di_blloon_falsk"></div>
+                                                    <div id="action-mp-svgtemplate-6"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="sin_blloon_falsk_1"></div>
+                                                    <div id="action-mp-svgtemplate-7"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="sin_blloon_falsk_2"></div>
+                                                    <div id="action-mp-svgtemplate-8"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="sin_blloon_falsk_3"></div>
+                                                    <div id="action-mp-svgtemplate-9"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="kjeldahl_flask_1"></div>
+                                                    <div id="action-mp-svgtemplate-10"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="kjeldahl_flask_2"></div>
+                                                    <div id="action-mp-svgtemplate-23"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="suction_flask"></div>
+                                                    <div id="action-mp-svgtemplate-24"
+                                                        class="tool-button primary-too svgtemplate" title="erlenmeyer">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-26"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="volumetric_flask"></div>
+                                                    <div id="action-mp-svgtemplate-27"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="elliptical_sin_blloon_falsk"></div>
+                                                    <div id="action-mp-svgtemplate-28"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="separatory_funnel_1"></div>
+                                                    <div id="action-mp-svgtemplate-29"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="separatory_funnel_2"></div>
+                                                    <div id="action-mp-svgtemplate-11"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Straight_Ground_Glass_Joint_1"></div>
+                                                    <div id="action-mp-svgtemplate-12"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Straight_Ground_Glass_Joint_2"></div>
+                                                    <div id="action-mp-svgtemplate-13"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Curved_Ground_Glass_Joint"></div>
+                                                    <div id="action-mp-svgtemplate-14"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_Joint_1"></div>
+                                                    <div id="action-mp-svgtemplate-15"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_2"></div>
+                                                    <div id="action-mp-svgtemplate-16"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_3"></div>
+                                                    <div id="action-mp-svgtemplate-17"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_4"></div>
+                                                    <div id="action-mp-svgtemplate-18"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_5"></div>
+                                                    <div id="action-mp-svgtemplate-19"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_6"></div>
+                                                    <div id="action-mp-svgtemplate-20"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distillation_joint_7"></div>
+                                                    <div id="action-mp-svgtemplate-21"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Clayson_joint"></div>
+                                                    <div id="action-mp-svgtemplate-22"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Curved_ground_glass_joint_1"></div>
+                                                    <div id="action-mp-svgtemplate-30"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Suction_branch" style="opacity: 0.65"></div>
+                                                    <div id="action-mp-svgtemplate-31"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="rectocondensor_1"></div>
+                                                    <div id="action-mp-svgtemplate-32"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="rectocondensor_2"></div>
+                                                    <div id="action-mp-svgtemplate-33"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="chromatographic_column"></div>
+                                                    <div id="action-mp-svgtemplate-34"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Distilled_water_pipe"></div>
+                                                    <div id="action-mp-svgtemplate-35"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Buchner_funnel_1"></div>
+                                                    <div id="action-mp-svgtemplate-36"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Soxhlet_extractor"></div>
+                                                    <div id="action-mp-svgtemplate-37"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Gas_Washing_Bottle"></div>
+                                                    <div id="action-mp-svgtemplate-38"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Iron_Support"></div>
+                                                    <div id="action-mp-svgtemplate-39"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Double_Buret_Clamp"></div>
+                                                    <div id="action-mp-svgtemplate-40"
+                                                        class="tool-button primary-too svgtemplate" title="Balance">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-41"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Syringe_Needle"></div>
+                                                    <div id="action-mp-svgtemplate-42"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Measuring_Cylinder"></div>
+                                                    <div id="action-mp-svgtemplate-43"
+                                                        class="tool-button primary-too svgtemplate" title="Burette">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-44"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Dropping_Funnel"></div>
+                                                    <div id="action-mp-svgtemplate-45"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Constant_Pressure_Funnel_1"></div>
+                                                    <div id="action-mp-svgtemplate-46"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Reflux_Condenser_west_tube_1"></div>
+                                                    <div id="action-mp-svgtemplate-47"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Reflux_Condenser_west_tube_2"></div>
+                                                    <div id="action-mp-svgtemplate-48"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Reflux_Economical_Allihn_Condenser"></div>
+                                                    <div id="action-mp-svgtemplate-49"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Reflux_Graham_Condenser"></div>
+                                                    <div id="action-mp-svgtemplate-50"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Efficient_Reflux_Graham_Condenser_1"></div>
+                                                    <div id="action-mp-svgtemplate-51"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Efficient_Reflux_Graham_Condenser_2"></div>
+                                                    <div id="action-mp-svgtemplate-52"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Efficient_Reflux_Graham_Condenser_3"></div>
+                                                    <div id="action-mp-svgtemplate-53"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Efficient_Reflux_Graham_Condenser_4"></div>
+                                                    <div id="action-mp-svgtemplate-54"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Mercurial_Thermometer_1"></div>
+                                                    <div id="action-mp-svgtemplate-55"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Mercurial_Thermometer_2"></div>
+                                                    <div id="action-mp-svgtemplate-56"
+                                                        class="tool-button primary-too svgtemplate" title="Funnel">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-57"
+                                                        class="tool-button primary-too svgtemplate" title="Funnel_2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-58"
+                                                        class="tool-button primary-too svgtemplate" title="Funnel_3">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-59"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Ground_Glass_Stopper"></div>
+                                                    <div id="action-mp-svgtemplate-60"
+                                                        class="tool-button primary-too svgtemplate" title="Syringe">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-61"
+                                                        class="tool-button primary-too svgtemplate" title="animals_01">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-62"
+                                                        class="tool-button primary-too svgtemplate" title="animals_02">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-63"
+                                                        class="tool-button primary-too svgtemplate" title="animals_03">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-64"
+                                                        class="tool-button primary-too svgtemplate" title="animals_04">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-65"
+                                                        class="tool-button primary-too svgtemplate" title="animals_05">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-66"
+                                                        class="tool-button primary-too svgtemplate" title="animals_06">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-67"
+                                                        class="tool-button primary-too svgtemplate" title="animals_07">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-68"
+                                                        class="tool-button primary-too svgtemplate" title="animals_08">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-69"
+                                                        class="tool-button primary-too svgtemplate" title="animals_09">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-70"
+                                                        class="tool-button primary-too svgtemplate" title="animals_10">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-71"
+                                                        class="tool-button primary-too svgtemplate" title="animals_11">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-72"
+                                                        class="tool-button primary-too svgtemplate" title="animals_12">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-73"
+                                                        class="tool-button primary-too svgtemplate" title="animals_13">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-74"
+                                                        class="tool-button primary-too svgtemplate" title="animals_15">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-75"
+                                                        class="tool-button primary-too svgtemplate" title="animals_16">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-76"
+                                                        class="tool-button primary-too svgtemplate" title="animals_14">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-77"
+                                                        class="tool-button primary-too svgtemplate" title="animals_18">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-78"
+                                                        class="tool-button primary-too svgtemplate" title="animals_17">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-79"
+                                                        class="tool-button primary-too svgtemplate" title="animals_19">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-80"
+                                                        class="tool-button primary-too svgtemplate" title="animals_20">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-81"
+                                                        class="tool-button primary-too svgtemplate" title="animals_21">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-82"
+                                                        class="tool-button primary-too svgtemplate" title="animals_22">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-83"
+                                                        class="tool-button primary-too svgtemplate" title="animals_24">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-84"
+                                                        class="tool-button primary-too svgtemplate" title="animals_23">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-85"
+                                                        class="tool-button primary-too svgtemplate" title="animals_26">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-86"
+                                                        class="tool-button primary-too svgtemplate" title="animals_27">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-87"
+                                                        class="tool-button primary-too svgtemplate" title="animals_28">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-88"
+                                                        class="tool-button primary-too svgtemplate" title="animals_29">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-89"
+                                                        class="tool-button primary-too svgtemplate" title="animals_30">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-90"
+                                                        class="tool-button primary-too svgtemplate" title="animals_31">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-91"
+                                                        class="tool-button primary-too svgtemplate" title="animals_32">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-92"
+                                                        class="tool-button primary-too svgtemplate" title="animals_33">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-93"
+                                                        class="tool-button primary-too svgtemplate" title="animals_34">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-94"
+                                                        class="tool-button primary-too svgtemplate" title="animals_36">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-95"
+                                                        class="tool-button primary-too svgtemplate" title="animals_37">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-96"
+                                                        class="tool-button primary-too svgtemplate" title="animals_38">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-97"
+                                                        class="tool-button primary-too svgtemplate" title="animals_39">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-98"
+                                                        class="tool-button primary-too svgtemplate" title="animals_40">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-99"
+                                                        class="tool-button primary-too svgtemplate" title="animals_41">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-100"
+                                                        class="tool-button primary-too svgtemplate" title="animals_42">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-101"
+                                                        class="tool-button primary-too svgtemplate" title="animals_43">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-102"
+                                                        class="tool-button primary-too svgtemplate" title="animals_44">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-103"
+                                                        class="tool-button primary-too svgtemplate" title="animals_45">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-104"
+                                                        class="tool-button primary-too svgtemplate" title="animals_46">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-105"
+                                                        class="tool-button primary-too svgtemplate" title="animals_47">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-106"
+                                                        class="tool-button primary-too svgtemplate" title="animals_35">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-107"
+                                                        class="tool-button primary-too svgtemplate" title="animals_48">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-108"
+                                                        class="tool-button primary-too svgtemplate" title="animals_25">
+                                                    </div>
+
+
+                                                    <div id="action-mp-svgtemplate-137"
+                                                        class="tool-button primary-too svgtemplate" title="Male"></div>
+                                                    <div id="action-mp-svgtemplate-121"
+                                                        class="tool-button primary-too svgtemplate" title="Female">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-122"
+                                                        class="tool-button primary-too svgtemplate" title="Female2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-148"
+                                                        class="tool-button primary-too svgtemplate" title="Skeleton">
+                                                    </div>
+
+                                                    <div id="action-mp-svgtemplate-118"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="CirculatorySystem"></div>
+                                                    <div id="action-mp-svgtemplate-160"
+                                                        class="tool-button primary-too svgtemplate" title="Torso"></div>
+                                                    <div id="action-mp-svgtemplate-140"
+                                                        class="tool-button primary-too svgtemplate" title="Muscle">
+                                                    </div>
+
+
+                                                    <div id="action-mp-svgtemplate-126"
+                                                        class="tool-button primary-too svgtemplate" title="Head"></div>
+                                                    <div id="action-mp-svgtemplate-110"
+                                                        class="tool-button primary-too svgtemplate" title="Brain"></div>
+                                                    <div id="action-mp-svgtemplate-150"
+                                                        class="tool-button primary-too svgtemplate" title="Skull"></div>
+                                                    <div id="action-mp-svgtemplate-116"
+                                                        class="tool-button primary-too svgtemplate" title="Ear"></div>
+                                                    <div id="action-mp-svgtemplate-119"
+                                                        class="tool-button primary-too svgtemplate" title="Eye"></div>
+                                                    <div id="action-mp-svgtemplate-124"
+                                                        class="tool-button primary-too svgtemplate" title="Foot"></div>
+                                                    <div id="action-mp-svgtemplate-125"
+                                                        class="tool-button primary-too svgtemplate" title="Hand"></div>
+
+                                                    <div id="action-mp-svgtemplate-134"
+                                                        class="tool-button primary-too svgtemplate" title="Lungs"></div>
+                                                    <div id="action-mp-svgtemplate-127"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Heart_anterior"></div>
+                                                    <div id="action-mp-svgtemplate-128"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Heart_posterior"></div>
+                                                    <div id="action-mp-svgtemplate-130"
+                                                        class="tool-button primary-too svgtemplate" title="Intestines">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-132"
+                                                        class="tool-button primary-too svgtemplate" title="Kidney">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-157"
+                                                        class="tool-button primary-too svgtemplate" title="Testes">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-145"
+                                                        class="tool-button primary-too svgtemplate" title="Ovaries">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-146"
+                                                        class="tool-button primary-too svgtemplate" title="Pancreas">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-155"
+                                                        class="tool-button primary-too svgtemplate" title="Spleen">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-158"
+                                                        class="tool-button primary-too svgtemplate" title="Thyroid">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-135"
+                                                        class="tool-button primary-too svgtemplate" title="LymphNode1">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-138"
+                                                        class="tool-button primary-too svgtemplate" title="LymphNode2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-154"
+                                                        class="tool-button primary-too svgtemplate" title="Stomach">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-109"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Adrenal_gland"></div>
+
+                                                    <div id="action-mp-svgtemplate-133"
+                                                        class="tool-button primary-too svgtemplate" title="Liver"></div>
+
+                                                    <div id="action-mp-svgtemplate-153"
+                                                        class="tool-button primary-too svgtemplate" title="SpinalCord">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-161"
+                                                        class="tool-button primary-too svgtemplate" title="Tooth"></div>
+                                                    <div id="action-mp-svgtemplate-162"
+                                                        class="tool-button primary-too svgtemplate" title="Vertebrae">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-151"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="SpinalColumn"></div>
+
+
+                                                    <div id="action-mp-svgtemplate-149"
+                                                        class="tool-button primary-too svgtemplate" title="Skin"></div>
+                                                    <div id="action-mp-svgtemplate-123"
+                                                        class="tool-button primary-too svgtemplate" title="Fibroblast">
+                                                    </div>
+
+
+                                                    <div id="action-mp-svgtemplate-129"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Hemacytoblast"></div>
+
+
+                                                    <div id="action-mp-svgtemplate-136"
+                                                        class="tool-button primary-too svgtemplate" title="Macrophage">
+                                                    </div>
+
+                                                    <div id="action-mp-svgtemplate-139"
+                                                        class="tool-button primary-too svgtemplate" title="MastCell">
+                                                    </div>
+
+                                                    <div id="action-mp-svgtemplate-147"
+                                                        class="tool-button primary-too svgtemplate" title="Plasma">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-142"
+                                                        class="tool-button primary-too svgtemplate" title="Neuron1">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-141"
+                                                        class="tool-button primary-too svgtemplate" title="Neuron2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-117"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Erythrocyte1"></div>
+                                                    <div id="action-mp-svgtemplate-120"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Erythrocyte2"></div>
+                                                    <div id="action-mp-svgtemplate-156"
+                                                        class="tool-button primary-too svgtemplate" title="Synapse">
+                                                    </div>
+
+                                                    <div id="action-mp-svgtemplate-131"
+                                                        class="tool-button primary-too svgtemplate" title="Karyotype">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-111"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="CellDivision"></div>
+                                                    <div id="action-mp-svgtemplate-112"
+                                                        class="tool-button primary-too svgtemplate" title="Chromosome1">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-113"
+                                                        class="tool-button primary-too svgtemplate" title="Chromosome2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-114"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="DNAReplication"></div>
+                                                    <div id="action-mp-svgtemplate-115"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="DNASplitting"></div>
+                                                    <div id="action-mp-svgtemplate-143"
+                                                        class="tool-button primary-too svgtemplate" title="Nucleosome1">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-144"
+                                                        class="tool-button primary-too svgtemplate" title="Nucleosome2">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-152"
+                                                        class="tool-button primary-too svgtemplate" title="Proteasome">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-159"
+                                                        class="tool-button primary-too svgtemplate" title="TCR"></div>
+                                                    <div id="action-mp-svgtemplate-163"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_01"></div>
+                                                    <div id="action-mp-svgtemplate-164"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_02"></div>
+                                                    <div id="action-mp-svgtemplate-165"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_03"></div>
+                                                    <div id="action-mp-svgtemplate-166"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_04"></div>
+                                                    <div id="action-mp-svgtemplate-167"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_05"></div>
+                                                    <div id="action-mp-svgtemplate-168"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_07"></div>
+                                                    <div id="action-mp-svgtemplate-169"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_08"></div>
+                                                    <div id="action-mp-svgtemplate-170"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_09"></div>
+                                                    <div id="action-mp-svgtemplate-171"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_10"></div>
+                                                    <div id="action-mp-svgtemplate-172"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_11"></div>
+                                                    <div id="action-mp-svgtemplate-173"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_06"></div>
+                                                    <div id="action-mp-svgtemplate-174"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_12"></div>
+                                                    <div id="action-mp-svgtemplate-175"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_13"></div>
+                                                    <div id="action-mp-svgtemplate-176"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_15"></div>
+                                                    <div id="action-mp-svgtemplate-177"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_16"></div>
+                                                    <div id="action-mp-svgtemplate-178"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_14"></div>
+                                                    <div id="action-mp-svgtemplate-179"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_17"></div>
+                                                    <div id="action-mp-svgtemplate-180"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_18"></div>
+                                                    <div id="action-mp-svgtemplate-181"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_19"></div>
+                                                    <div id="action-mp-svgtemplate-182"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_20"></div>
+                                                    <div id="action-mp-svgtemplate-183"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_21"></div>
+                                                    <div id="action-mp-svgtemplate-184"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_23"></div>
+                                                    <div id="action-mp-svgtemplate-185"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_22"></div>
+                                                    <div id="action-mp-svgtemplate-186"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_24"></div>
+                                                    <div id="action-mp-svgtemplate-187"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_26"></div>
+                                                    <div id="action-mp-svgtemplate-188"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_27"></div>
+                                                    <div id="action-mp-svgtemplate-189"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_28"></div>
+                                                    <div id="action-mp-svgtemplate-190"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_29"></div>
+                                                    <div id="action-mp-svgtemplate-191"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_30"></div>
+                                                    <div id="action-mp-svgtemplate-192"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_31"></div>
+                                                    <div id="action-mp-svgtemplate-193"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_32"></div>
+                                                    <div id="action-mp-svgtemplate-194"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="bio_instruments_25"></div>
+                                                    <div id="action-mp-svgtemplate-195"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_10.svg"></div>
+                                                    <div id="action-mp-svgtemplate-196"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_1.svg"></div>
+                                                    <div id="action-mp-svgtemplate-197"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_12.svg"></div>
+                                                    <div id="action-mp-svgtemplate-198"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_15.svg"></div>
+                                                    <div id="action-mp-svgtemplate-199"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_13.svg"></div>
+                                                    <div id="action-mp-svgtemplate-200"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_16.svg"></div>
+                                                    <div id="action-mp-svgtemplate-201"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_14.svg"></div>
+                                                    <div id="action-mp-svgtemplate-202"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_17.svg"></div>
+                                                    <div id="action-mp-svgtemplate-203"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_18.svg"></div>
+                                                    <div id="action-mp-svgtemplate-204"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_19.svg"></div>
+                                                    <div id="action-mp-svgtemplate-205"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-206"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_20.svg"></div>
+                                                    <div id="action-mp-svgtemplate-207"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_21.svg"></div>
+                                                    <div id="action-mp-svgtemplate-208"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_22.svg"></div>
+                                                    <div id="action-mp-svgtemplate-209"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_24.svg"></div>
+                                                    <div id="action-mp-svgtemplate-210"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_25.svg"></div>
+                                                    <div id="action-mp-svgtemplate-211"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_26.svg"></div>
+                                                    <div id="action-mp-svgtemplate-212"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_3.svg"></div>
+                                                    <div id="action-mp-svgtemplate-213"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_4.svg"></div>
+                                                    <div id="action-mp-svgtemplate-214"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_5.svg"></div>
+                                                    <div id="action-mp-svgtemplate-215"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_6.svg"></div>
+                                                    <div id="action-mp-svgtemplate-216"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_7.svg"></div>
+                                                    <div id="action-mp-svgtemplate-217"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_8.svg"></div>
+                                                    <div id="action-mp-svgtemplate-218"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_9.svg"></div>
+                                                    <div id="action-mp-svgtemplate-219"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_11.svg"></div>
+                                                    <div id="action-mp-svgtemplate-220"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="BioArt_23.svg"></div>
+                                                    <div id="action-mp-svgtemplate-221"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_1.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-222"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_10.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-223"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_11.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-224"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_12.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-225"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_13.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-226"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_14.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-227"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_15.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-228"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_17.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-229"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_16.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-230"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_2.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-231"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_18.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-232"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_4.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-233"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_3.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-234"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_5.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-235"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_6.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-236"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_9.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-237"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_8.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-238"
+                                                        class="tool-button primary-too svgtemplate" title="Bug_7.svg">
+                                                    </div>
+                                                    <div id="action-mp-svgtemplate-239"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_1.svg"></div>
+                                                    <div id="action-mp-svgtemplate-240"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-241"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_3.svg"></div>
+                                                    <div id="action-mp-svgtemplate-242"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_4.svg"></div>
+                                                    <div id="action-mp-svgtemplate-243"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_5.svg"></div>
+                                                    <div id="action-mp-svgtemplate-244"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_6.svg"></div>
+                                                    <div id="action-mp-svgtemplate-245"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_7.svg"></div>
+                                                    <div id="action-mp-svgtemplate-246"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_8.svg"></div>
+                                                    <div id="action-mp-svgtemplate-247"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Microorganism_9.svg"></div>
+                                                    <div id="action-mp-svgtemplate-248"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Animal_Cell.svg"></div>
+                                                    <div id="action-mp-svgtemplate-249"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Cell_mucleus.svg"></div>
+                                                    <div id="action-mp-svgtemplate-250"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Centriole.svg"></div>
+                                                    <div id="action-mp-svgtemplate-251"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Chlorplast_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-252"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Chloroplast_1.svg"></div>
+                                                    <div id="action-mp-svgtemplate-253"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Golgi_body_1.svg"></div>
+                                                    <div id="action-mp-svgtemplate-254"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Golgi_body_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-255"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Mitochondrion.svg"></div>
+                                                    <div id="action-mp-svgtemplate-256"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Plant_Cell.svg"></div>
+                                                    <div id="action-mp-svgtemplate-257"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Golgi_body_3.svg"></div>
+                                                    <div id="action-mp-svgtemplate-258"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Rough_Endoplasmic_Reticulum_1.svg"></div>
+                                                    <div id="action-mp-svgtemplate-259"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Rough_Endoplasmic_Reticulum_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-260"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Smooth_Endoplasmic_Reticulum_2.svg"></div>
+                                                    <div id="action-mp-svgtemplate-261"
+                                                        class="tool-button primary-too svgtemplate"
+                                                        title="Smooth_Endoplasmic_Reticulum_1.svg"></div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- add by hkk 2019/8/29 加入茂环结构-->
+                                            <div id="action-mp-frag-cyclopentadiene"  data-button="" class="tool-button primary-tool"
+                                                 title="Cyclopentadiene" style="position:relative;background-size: 40px 40px;height: 40px">
+                                                <div class="act-wrap" style="height: auto; width: 200px;">
+                                                    <div id="action-mp-frag-cyclopentadiene"  class="tool-button primary-tool"title="Cyclopentadiene"></div>
+                                                    <div id="action-mp-frag-aromatic-cyclopentane" class="tool-button primary-tool" title="Aromatic Cyclopentane"></div>
+                                                    <div id="action-mp-frag-aromatic-cyclopentane2" class="tool-button primary-tool" title="Aromatic Cyclopentane 2"></div>
+                                                    <div id="action-mp-frag-aromatic-cyclopentane3" class="tool-button primary-tool" title="Aromatic Cyclopentane 3"></div>
+                                                    <div id="action-placeholder" style="pointer-events: none;width: 40px;height: 40px"  ></div>
+                                                    <div id="action-mp-frag-aromatic-ferrocene1" class="tool-button primary-tool ferroceneStyle" title="Ferrocene 1"></div>
+                                                    <div id="action-mp-frag-aromatic-ferrocene2" class="tool-button primary-tool ferroceneStyle" title="Ferrocene 2"></div>
+                                                    <div id="action-mp-frag-aromatic-ferrocene3" class="tool-button primary-tool ferroceneStyle" title="Ferrocene 3"></div>
+                                                    <div id="action-mp-frag-aromatic-ferrocene4" class="tool-button primary-tool ferroceneStyle" title="Ferrocene 4"></div>
+                                                    <div id="action-mp-frag-aromatic-ferrocene5" class="tool-button primary-tool ferroceneStyle" title="Ferrocene 5"></div>
+
+                                                </div>
+                                            </div>
+                                            <div id="action-mp-frag-benzene" data-button="" class="tool-button primary-tool"
+                                                 title="Rings" style="position:relative;background-size: 40px 40px;height: 40px">
+                                                <div class="act-wrap" style="height: auto; width: 160px;">
+                                                    <div id="action-mp-frag-benzene" class="tool-button primary-tool"  title="Benzene"></div>
+                                                    <div id="action-mp-frag-aromatic-benzene" class="tool-button primary-tool" title="Aromatic Benzene"></div>
+                                                    <div id="action-mp-frag-aromatic-benzene2" class="tool-button primary-tool" title="Aromatic Benzene 2"></div>
+                                                    <div id="action-mp-frag-aromatic-benzene3" class="tool-button primary-tool" title="Aromatic Benzene 3"></div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div id="action-mp-frag-cyclopentane" class="tool-button primary-tool"
+                                                title="Cyclopentane"></div>
+                                            <div id="action-mp-frag-cycloheptane" class="tool-button primary-tool"
+                                                title="Cycloheptane"></div>
+                                            <div id="action-mp-frag-cyclohexane" class="tool-button primary-tool"
+                                                title="Cyclohexane"></div>
+                                            <div id="action-mp-frag-cyclopropane" class="tool-button primary-tool"
+                                                title="Cyclopropane"></div>
+                                            <div id="action-mp-frag-cyclobutane" class="tool-button primary-tool"
+                                                title="Cyclobutane"></div>
+                                            <div id="action-mp-frag-cyclooctane" class="tool-button primary-tool"
+                                                title="Cyclooctane"></div>
+                                            <!--<div id="action-mp-sgroup" class="tool-button primary-tool" title="Bracket"-->
+                                                <!--style="transform:scale(.65);"></div>-->
+                                            <div id="action-mp-fd-squareBrackets" data-button="" class="tool-button primary-tool"
+                                                 style="position:relative;opacity:.7" title="Square Brackets">
+                                                <div class="act-wrap">
+
+                                                    <!-- 隐藏sGroup三种单元括号选项  delete by hkk 2018.12.4 -->
+                                                    <!--<div id="action-mp-bracket" class="tool-button primary-tool"-->
+                                                    <!--title="Bracket"></div>-->
+                                                    <!--<div id="action-mp-rbracket" class="tool-button primary-tool"-->
+                                                    <!--title="Round Bracket"></div>-->
+                                                    <!--<div id="action-mp-sgroup" class="tool-button primary-tool"-->
+                                                    <!--title="SGroup Bracket"></div>-->
+
+                                                    <!-- 增加六种单元括号流程图选项  add by hkk 2018.12.4 -->
+                                                    <div id="action-mp-fd-squareBracket"
+                                                         class="tool-button primary-tool fd-squareBracket" data-class="fd-squareBracket"
+                                                         title="Square Bracket"></div>
+                                                    <div id="action-mp-fd-roundBracket"
+                                                         class="tool-button primary-tool fd-roundBracket" data-class="fd-roundBracket"
+                                                         title="Round Bracket"></div>
+                                                    <div id="action-mp-fd-brace"
+                                                         class="tool-button primary-tool fd-brace" data-class="fd-brace"
+                                                         title="Brace"></div>
+                                                    <div id="action-mp-fd-squareBrackets"
+                                                         class="tool-button primary-tool fd-squareBrackets" data-class="fd-squareBrackets"
+                                                         title="Square Brackets"></div>
+                                                    <div id="action-mp-fd-roundBrackets"
+                                                         class="tool-button primary-tool fd-roundBrackets" data-class="fd-roundBrackets"
+                                                         title="Round Brackets"></div>
+                                                    <div id="action-mp-fd-braces"
+                                                         class="tool-button primary-tool fd-braces" data-class="fd-braces"
+                                                         title="Braces"></div>
+
+                                                </div>
+                                            </div>
+
+                                            <div id="action-mp-straightArrow" data-button=""
+                                                class="tool-button primary-tool" style="position:relative;"
+                                                title="straightArrow">
+                                                <div class="act-wrap" style="display: none;">
+                                                    <div id="action-mp-straightArrow" class="tool-button primary-tool"
+                                                        title="straightArrow"></div>
+                                                    <div id="action-mp-straightArrow2" class="tool-button primary-tool"
+                                                        title="Solid (Large)"></div>
+                                                    <div id="action-mp-straightArrow1" class="tool-button primary-tool"
+                                                        title="Solid (Medium)"></div>
+                                                    <div id="action-mp-straightArrow" class="tool-button primary-tool"
+                                                        title="Solid (Small)"></div>
+                                                    <div id="action-mp-reverse2" class="tool-button primary-tool"
+                                                        title="Hollow (Large)"></div>
+                                                    <div id="action-mp-reverse8" class="tool-button primary-tool"
+                                                        title="Hollow (Medium)"></div>
+                                                    <div id="action-mp-reverse9" class="tool-button primary-tool"
+                                                        title="RetroSynthetic (Large)"></div>
+                                                    <div id="action-mp-reverse10" class="tool-button primary-tool"
+                                                        title="RetroSynthetic (Small)"></div>
+                                                    <div id="action-mp-straightArrow5" class="tool-button primary-tool"
+                                                        title="Bold (Large)"></div>
+                                                    <div id="action-mp-straightArrow4" class="tool-button primary-tool"
+                                                        title="Bold (Medium)"></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="action-mp-bond-single" data-button="" class="tool-button primary-tool"
+                                                 style="position:relative" title="Single bond">
+                                                <div class="act-wrap" style="width: 160px;">
+                                                    <div id="action-mp-bond-single" class="tool-button primary-tool"
+                                                         title="Single bond"></div>
+                                                    <div id="action-mp-bond-any" class="tool-button primary-tool"
+                                                         title="Any bond"></div>
+                                                    <div id="action-mp-bond-down" class="tool-button primary-tool"
+                                                         title="Down bond"></div>
+                                                    <div id="action-mp-bond-dashed" class="tool-button primary-tool"
+                                                         title="Dashed bond"></div>
+                                                    <div id="action-mp-bond-hydrobond" class="tool-button primary-tool"
+                                                         title="Hydrogen/Ionic bond"></div>
+                                                    <div id="action-mp-bond-cord" class="tool-button primary-tool"
+                                                         title="Coordinate bond"></div>
+                                                    <!--2018.5.7 add by hkk 增加波浪键和断键显示-->
+                                                    <div id="action-mp-bond-wavy" class="tool-button primary-tool"
+                                                         title="Wavy bond"></div>
+                                                    <div id="action-mp-bond-break" class="tool-button primary-tool"
+                                                         title="Break bond"></div>
+                                                </div>
+                                            </div>
+
+                                            <div id="action-mp-bond-double" data-button="" class="tool-button primary-tool"
+                                                 style="position:relative;" title="Double bond">
+                                                <div class="act-wrap" style="width: 160px;">
+                                                    <div id="action-mp-bond-double" class="tool-button primary-tool"
+                                                         title="Double bond"></div>
+                                                    <div id="action-mp-bond-aromatic" class="tool-button primary-tool"
+                                                         title="Aromatic bond"></div>
+                                                    <div id="action-mp-bond-sgaromatic" class="tool-button primary-tool"
+                                                         title="Single/Aromatic bond"></div>
+                                                    <div id="action-mp-bond-cross" class="tool-button primary-tool"
+                                                         title="Double Either bond"></div>
+                                                    <div id="action-mp-bond-dlaromatic" class="tool-button primary-tool"
+                                                         title="Double/Aromatic bond"></div>
+                                                    <div id="action-mp-bond-singledouble" class="tool-button primary-tool"
+                                                         title="Single/Double bond"></div>
+
+                                                </div>
+                                            </div>
+                                            <div id="action-mp-bond-triple" class="tool-button primary-tool"
+                                                title="Triple bond"></div>
+                                            <div id="action-mp-bond-hash" data-button=""
+                                                class="tool-button primary-tool" title="Hash bond">
+                                                <div class="act-wrap" style="width:120px;">
+                                                    <div id="action-mp-bond-hash" class="tool-button primary-tool"
+                                                        title="Hash bond"></div>
+                                                    <div id="action-mp-bond-wedge" class="tool-button primary-tool"
+                                                        title="Wedge bond"></div>
+                                                    <div id="action-mp-bond-up" class="tool-button primary-tool" title="Up bond"></div>
+                                                </div>
+                                            </div>
+                                            <div id="action-mp-chain" class="tool-button primary-tool"
+                                                title="Carbon chain"></div>
+                                            <div id="action-mp-multiBond" class="tool-button primary-tool"
+                                                title="MultiBond"></div>
+                                            <div id="action-mp-charge-add" data-button=""
+                                                class="tool-button primary-tool" title="Charge +"
+                                                style="position:relative;">
+                                                <div class="act-wrap" style="display: none;">
+                                                    <div id="action-mp-charge-add" class="tool-button primary-tool"
+                                                        title="Charge +"></div>
+                                                    <div id="action-mp-charge-sub" class="tool-button primary-tool"
+                                                        title="Charge -"></div>
+                                                    <div id="action-mp-doublet" class="tool-button primary-tool"
+                                                        title="Doublet"></div>
+                                                    <div id="action-mp-singlet" class="tool-button primary-tool"
+                                                        title="Lone Pair Electron(Singlet)"></div>
+                                                    <div id="action-mp-triplet" class="tool-button primary-tool"
+                                                        title="Triplet"></div>
+                                                </div>
+                                            </div>
+                                            <div id="action-mp-fd-rect" data-button="" class="tool-button primary-tool"
+                                                style="position:relative;" title="flowDiagram">
+                                                <div class="act-wrap"
+                                                    style="height: auto; width: 320px; display: none;">
+                                                    <div id="action-mp-fd-circle"
+                                                        class="tool-button primary-tool fd-circle"
+                                                        data-class="fd-circle" title="Circle"></div>
+                                                    <div id="action-mp-fd-dashCircle"
+                                                        class="tool-button primary-tool fd-dashCircle"
+                                                        data-class="fd-dashCircle" title="DashCircle"></div>
+                                                    <div id="action-mp-fd-3dCircle"
+                                                        class="tool-button primary-tool fd-3dCircle"
+                                                        data-class="fd-3dCircle" title="3dCircle"></div>
+                                                    <div id="action-mp-fd-solidCircle"
+                                                        class="tool-button primary-tool fd-solidCircle"
+                                                        data-class="fd-solidCircle" title="SolidCircle"></div>
+                                                    <div id="action-mp-fd-shadowCircle"
+                                                        class="tool-button primary-tool fd-shadowCircle"
+                                                        data-class="fd-shadowCircle" title="ShadowCircle"></div>
+                                                    <div id="action-mp-fd-line" class="tool-button primary-tool fd-line"
+                                                        data-class="fd-line" title="line"></div>
+                                                    <div id="action-mp-fd-arc270"
+                                                        class="tool-button primary-tool fd-arc270"
+                                                        data-class="fd-arc270" title="Arc270"></div>
+                                                    <div id="action-mp-fd-dashArc270"
+                                                        class="tool-button primary-tool fd-dashArc270"
+                                                        data-class="fd-dashArc270" title="DashArc270"></div>
+                                                    <div id="action-mp-fd-ellipse"
+                                                        class="tool-button primary-tool fd-ellipse"
+                                                        data-class="fd-ellipse" title="Ellipse"></div>
+                                                    <div id="action-mp-fd-dashEllipse"
+                                                        class="tool-button primary-tool fd-dashEllipse"
+                                                        data-class="fd-dashEllipse" title="DashEllipse"></div>
+                                                    <div id="action-mp-fd-3dEllipse"
+                                                        class="tool-button primary-tool fd-3dEllipse"
+                                                        data-class="fd-3dEllipse" title="3dEllipse"></div>
+                                                    <div id="action-mp-fd-solidEllipse"
+                                                        class="tool-button primary-tool fd-solidEllipse"
+                                                        data-class="fd-solidEllipse" title="SolidEllipse"></div>
+                                                    <div id="action-mp-fd-shadowEllipse"
+                                                        class="tool-button primary-tool fd-shadowEllipse"
+                                                        data-class="fd-shadowEllipse" title="ShadowEllipse"></div>
+                                                    <div id="action-mp-fd-dashLine"
+                                                        class="tool-button primary-tool fd-dashLine"
+                                                        data-class="fd-dashLine" title="DashLine"></div>
+                                                    <div id="action-mp-fd-arc180"
+                                                        class="tool-button primary-tool fd-arc180"
+                                                        data-class="fd-arc180" title="Arc180"></div>
+                                                    <div id="action-mp-fd-dashArc180"
+                                                        class="tool-button primary-tool fd-dashArc180"
+                                                        data-class="fd-dashArc180" title="DashArc180"></div>
+                                                    <div id="action-mp-fd-roundedRect"
+                                                        class="tool-button primary-tool fd-roundedRect"
+                                                        data-class="fd-roundedRect" title="RoundedRect"></div>
+                                                    <div id="action-mp-fd-dashRoundedRect"
+                                                        class="tool-button primary-tool fd-dashRoundedRect"
+                                                        data-class="fd-dashRoundedRect" title="DashRoundedRect"></div>
+                                                    <div id="action-mp-fd-3dRoundedRect"
+                                                        class="tool-button primary-tool fd-3dRoundedRect"
+                                                        data-class="fd-3dRoundedRect" title="3dRoundedRect"></div>
+                                                    <div id="action-mp-fd-solidRoundedRect"
+                                                        class="tool-button primary-tool fd-solidRoundedRect"
+                                                        data-class="fd-solidRoundedRect" title="SolidRoundedRect"></div>
+                                                    <div id="action-mp-fd-shadowRoundedRect"
+                                                        class="tool-button primary-tool fd-shadowRoundedRect"
+                                                        data-class="fd-shadowRoundedRect" title="ShadowRoundedRect">
+                                                    </div>
+                                                    <div id="action-mp-fd-arcLine"
+                                                        class="tool-button primary-tool fd-arcLine"
+                                                        data-class="fd-arcLine" title="ArcLine"></div>
+                                                    <div id="action-mp-fd-arc120"
+                                                        class="tool-button primary-tool fd-arc120"
+                                                        data-class="fd-arc120" title="Arc120"></div>
+                                                    <div id="action-mp-fd-dashArc120"
+                                                        class="tool-button primary-tool fd-dashArc120"
+                                                        data-class="fd-dashArc120" title="DashArc120"></div>
+                                                    <div id="action-mp-fd-rect" class="tool-button primary-tool fd-rect"
+                                                        data-class="fd-rect" title="Rect"></div>
+                                                    <div id="action-mp-fd-dashRect"
+                                                        class="tool-button primary-tool fd-dashRect"
+                                                        data-class="fd-dashRect" title="DashRect"></div>
+                                                    <div id="action-mp-fd-3dRect"
+                                                        class="tool-button primary-tool fd-3dRect"
+                                                        data-class="fd-3dRect" title="3dRect"></div>
+                                                    <div id="action-mp-fd-solidRect"
+                                                        class="tool-button primary-tool fd-solidRect"
+                                                        data-class="fd-solidRect" title="SolidRect"></div>
+                                                    <div id="action-mp-fd-shadowRect"
+                                                        class="tool-button primary-tool fd-shadowRect"
+                                                        data-class="fd-shadowRect" title="ShadowRect"></div>
+                                                    <div id="action-mp-fd-boldLine"
+                                                        class="tool-button primary-tool fd-boldLine"
+                                                        data-class="fd-boldLine" title="BoldLine"></div>
+                                                    <div id="action-mp-fd-arc90"
+                                                        class="tool-button primary-tool fd-arc90" data-class="fd-arc90"
+                                                        title="Arc90"></div>
+                                                    <div id="action-mp-fd-dashArc90"
+                                                        class="tool-button primary-tool fd-dashArc90"
+                                                        data-class="fd-dashArc90" title="DashArc90"></div>
+                                                </div>
+                                            </div>
+                                            <div id="action-mp-savefullpic" class="tool-button primary-tool"
+                                                title="Save Structure"></div>
+                                            <div id="action-mp-formatRXN"
+                                                class="tool-button primary-tool tool-button-disabled"
+                                                title="Format RXN"></div>
+                                            <div id="action-mp-formatStructure"
+                                                class="tool-button primary-tool tool-button-disabled"
+                                                title="Format Structure"></div>
+                                            <div id="action-mp-img2mol" class="tool-button primary-tool"
+                                                title="截取结构式并识别" data-title="" style="display:none;"></div>
+                                            <div id="action-mp-centerAlign"
+                                                class="tool-button tool-button-horizontal primary-tool"
+                                                title="Center Align"></div>
+                                            <!-- <div id="indraw-fullScreen" class="tool-button tool-button-horizontal hide_in_ie" title="全屏"></div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="indraw-canvas-box" class="vertical"></div>
+                        <a id="vertcial-right-tools" href="javascript:;" style="display:none;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="messages"></div>
+        <div id="autocomplete-dropdown-wrapper" style="display: none;">
+            <div id="autocomplete-dropdown"></div>
+        </div>
+        <div id="dialog-overlay" class="dialog-overlay" style="display:none;">
+            <div id="dialog-click-area">
+                <div class="dialog" id="periodictable-dialog" style="display: none;">
+                    <h2>Periodic Table</h2>
+                    <div id="periodictable"></div>
+                    <div class="footer">
+                        <button class="btn close btn-primary">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialogWindow sgroupDialog sgroup_item" id="sgroup_properties" style="display:none;">
+            <div style="width:auto;">
+                <div style="height:0.5em"></div>
+                <table style="text-align:left; position:relative; margin: 100px auto 0; background:#F1F1F1">
+                    <tr>
+                        <td>
+                            <label style="width: auto;">Type:</label>
+                        </td>
+                        <td>
+                            <select id="sgroup_type" style="position:inherit; width: 200px;">
+                                <option value="GEN" selected="selected" class="noOpt">Generic</option>
+                                <option value="MON" class="noOpt">Monomer</option>
+                                <option value="MER" class="noOpt">Mer</option>
+                                <option value="MOD" class="noOpt">Modification</option>
+                                <option value="MUL" id="mul">Multiple group</option>
+                                <option value="COM" id="component">Component</option>
+                                <option value="SRU" id="sru">SRU polymer</option>
+                                <option value="COP" id="copoly">Copolymer</option>
+                                <option value="ALT" id="copoly_alt">Copolymer, alternating</option>
+                                <option value="BLO" id="copoly_blo">Copolymer, block</option>
+                                <option value="RAN" id="copoly_ran">Copolymer, random</option>
+                                <option value="MIX" id="mix">Mixture</option>
+                                <option value="FOR" id="for">Formulation</option>
+                                <option value="ANY" class="oneOpt">Any polymer</option>
+                                <option value="GRA" class="oneOpt">Graft</option>
+                                <option value="CRO" class="oneOpt">Cross Link</option>
+                                <option value="DAT">Data</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sgroup_connection">
+                        <td>
+                            <label>Connection:</label>
+                        </td>
+                        <td>
+                            <select class="sgroup_connection">
+                                <option value="ht">Head-to-tail</option>
+                                <option value="hh">Head-to-head</option>
+                                <option value="eu">Either unknown</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="generalSGroup">
+                        <td>
+                            <label id="sub_label">Label (subscript):</label>
+                        </td>
+                        <td>
+                            <input id="sgroup_label" type="text" maxlength="15" size="15" />
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td>
+                            <label>Field name:</label>
+                        </td>
+                        <td>
+                            <input id="sgroup_field_name" type="text" maxlength="30" size="30" />
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td>
+                            <label>Field value:</label>
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td colspan="2">
+                            <textarea class="dataSGroupValue" id="sgroup_field_value"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td colspan="2">
+                            <input type="radio" id="sgroup_pos_absolute" name="data_field_pos" checked>Absolute</input>
+                            <input type="radio" id="sgroup_pos_relative" name="data_field_pos">Relative</input>
+                            <input type="radio" id="sgroup_pos_attached" name="data_field_pos">Attached</input>
+                        </td>
+                    </tr>
+                    <tr style="margin-top:0.5em">
+                        <td>
+                            <input id="sgroup_prop_cancel" type="button" value="Cancel" />
+                        </td>
+                        <td>
+                            <input id="sgroup_prop_ok" type="button" value="OK" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 这个最后是需要封装为组件，动态生成的，暂时手写在这 -->
+        <div data-name="cross-post" style="">
+            <iframe name="proxyIframe" id="proxyIframe" src=""></iframe>
+            <form action="http://121.42.137.238/cdxUpload/smiToMol.php" method="post" target="proxyIframe">
+                <input type="hidden" name="smiles" value="" />
+                <input type="hidden" name="callback" value="exportImport.handleSmiles" />
+                <input type="hidden" name="proxy" value="/proxy.html" />
+                <input type="submit" value="btn" data-name="submit-cross-request" />
+            </form>
+        </div>
+        <div id="structure-search" class="search-button search-button-disabled">结构式搜索</div>
+        <a data-name="showLogo" href="javascript:;" target="_blank" title="进一步了解InDraw"></a>
+        <a data-name="showScale"
+            style=" left:178px; bottom:18px;position:absolute;width:25px;height:15px; display: none"></a>
+        <div id="zoom-control-container"
+            style="left:90px; bottom:3px;background-color: #0ea7eb; width:200px; height: 6px; position: absolute; display: none;">
+            <div id="zoom-control"
+                style="width: 10px; height: 10px; background-color: black; left: 95px; bottom:-1px; position: absolute; cursor: pointer;">
+            </div>
+        </div>
+        <div class="slider-wrapper">
+            <span id="scale-percentage">100%</span>
+            <i id="icon-decrease" class="icon iconfont icon-decrease"></i>
+            <input type="text" id="canvas-scale-slider" data-slider-min="0" data-slider-max="200" data-slider-step="1"
+                data-slider-value="100" />
+            <i id="icon-increase" class="icon iconfont icon-increase"></i>
+        </div>
+        <!--
+        作者：1032285193@qq.com
+        时间：2017-06-28
+        描述：肽链功能弹窗
+    -->
+        <div id="peptide-container">
+            <a title="关闭" href="javascript:;" class="modalbox-close"><svg width="1024" height="1024"
+                    viewBox="0 0 1024 1024">
+                    <g class="transform-group">
+                        <g transform="translate(0, 25.375) scale(1, -1) scale(0.03125, 0.03125)">
+                            <path
+                                d="M573.989475 312.942837l288.898365 279.702021c14.022629 13.587739 14.022629 35.617094 0 49.206846-14.020551 13.587739-36.757056 13.587739-50.780724 0L523.185891 362.128539 234.265705 641.852712c-14.023668 13.587739-36.760173 13.587739-50.780724 0-14.022629-13.589753-14.022629-35.620114 0-49.206846l288.898365-279.702021L183.484981 33.240816c-14.022629-13.587739-14.022629-35.617094 0-49.206846 14.020551-13.587739 36.757056-13.587739 50.780724 0l288.920186 279.724172 288.920186-279.724172c14.023668-13.587739 36.760173-13.587739 50.780724 0 14.022629 13.589753 14.022629 35.620114 0 49.206846L573.989475 312.942837z"
+                                fill="#737383"></path>
+                        </g>
+                    </g>
+                </svg></a>
+            <div class="peptide-header container-item">
+                <span>Biopolymer</span>
+            </div>
+
+            <div class="peptide-type container-item">
+                <div class="peptide-edit peptide-type-item">
+                    <span class="selected">A(C-N)</span>
+                    <span>A(N-C)</span>
+                </div>
+                <div class="peptide-LD peptide-type-item">
+                    <span class="selected">L-</span>
+                    <span>D-</span>
+                </div>
+                <div class="peptide-type-clear"></div>
+            </div>
+
+            <div class="peptide-aminoAcids container-item">
+                <div class="peptide-aminoAcids-wrapper">
+                    <p class="peptide-aminoAcid">Ala <br /><span>A</span></p>
+                    <p class="peptide-aminoAcid">Arg <br /><span>R</span></p>
+                    <p class="peptide-aminoAcid">Asn <br /><span>N</span></p>
+                    <p class="peptide-aminoAcid">Asp <br /><span>D</span></p>
+                    <p class="peptide-aminoAcid">Cys <br /><span>C</span></p>
+                    <p class="peptide-aminoAcid">Gln <br /><span>Q</span></p>
+                    <p class="peptide-aminoAcid">Glu <br /><span>E</span></p>
+                    <p class="peptide-aminoAcid">Gly <br /><span>G</span></p>
+                    <p class="peptide-aminoAcid">His <br /><span>H</span></p>
+                    <p class="peptide-aminoAcid">Ile <br /><span>I</span></p>
+                    <p class="peptide-aminoAcid">Leu <br /><span>L</span></p>
+                    <p class="peptide-aminoAcid">Lys <br /><span>K</span></p>
+                    <p class="peptide-aminoAcid">Met <br /><span>M</span></p>
+                    <p class="peptide-aminoAcid">Phe <br /><span>F</span></p>
+                    <p class="peptide-aminoAcid">Pro <br /><span>P</span></p>
+                    <p class="peptide-aminoAcid">Ser <br /><span>S</span></p>
+                    <p class="peptide-aminoAcid">Thr <br /><span>T</span></p>
+                    <p class="peptide-aminoAcid">Trp <br /><span>W</span></p>
+                    <p class="peptide-aminoAcid">Tyr <br /><span>Y</span></p>
+                    <p class="peptide-aminoAcid">Val <br /><span>V</span></p>
+                    <div class="peptide-aminoAcid-clear"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--
+        作者：1032285193@qq.com
+        时间：2017-04-18
+        描述：设置模块
+    -->
+        <div class="set-container-shade" tabindex="1">
+            <div id="set-container">
+                <div class="set-header set-no-select">
+                    设置
+                    <!--<div class="set-header-close">关闭</div>-->
+                    <a href="javascript:;" class="set-header-close"><svg width="1024" height="1024"
+                            viewBox="0 0 1024 1024">
+                            <g class="transform-group">
+                                <g transform="translate(0, 25.375) scale(1, -1) scale(0.03125, 0.03125)">
+                                    <path
+                                        d="M573.989475 312.942837l288.898365 279.702021c14.022629 13.587739 14.022629 35.617094 0 49.206846-14.020551 13.587739-36.757056 13.587739-50.780724 0L523.185891 362.128539 234.265705 641.852712c-14.023668 13.587739-36.760173 13.587739-50.780724 0-14.022629-13.589753-14.022629-35.620114 0-49.206846l288.898365-279.702021L183.484981 33.240816c-14.022629-13.587739-14.022629-35.617094 0-49.206846 14.020551-13.587739 36.757056-13.587739 50.780724 0l288.920186 279.724172 288.920186-279.724172c14.023668-13.587739 36.760173-13.587739 50.780724 0 14.022629 13.589753 14.022629 35.620114 0 49.206846L573.989475 312.942837z"
+                                        fill="#737383"></path>
+                                </g>
+                            </g>
+                        </svg></a>
+                </div>
+                <div class="set-body">
+                    <div class="set-body-left set-body-item set-no-select">
+                        <ul>
+                            <li><span class="active" data-index="0">化学键设置</span></li>
+                            <li><span class="deactive" data-index="1">箭头设置</span></li>
+                            <li><span class="deactive" data-index="2">流程图设置</span></li>
+                            <li><span class="deactive" data-index="3">报错设置</span></li>
+                        </ul>
+                    </div>
+                    <div class="set-body-right set-body-item">
+                        <div class="set-bond-container set-item-container">
+                            <div class="set-bond-item">
+                                <div class="item-list item-list2">
+                                    <p><label>键角：</label></p>
+                                    <input id="bond-angle" value="120" type="text" /><label>度</label>
+                                    <p class="set-error-info"></p>
+                                </div>
+
+                                <div class="item-list item-list2">
+                                    <p><label>键间距：</label></p>
+                                    <div>
+                                        <input id="bond-space-ratio" type="text" value="12" />
+                                        <input type="radio" name="set-unit" value="unit-rel" checked="true" />
+                                        <label>百分比</label>
+                                        <p class="set-error-info"></p>
+                                    </div>
+                                    <div>
+                                        <input id="bond-space-absolute" type="text" value="0.127" />
+                                        <input type="radio" name="set-unit" value="unit-abs" />
+                                        <label>固定长度</label>
+                                        <p class="set-error-info"></p>
+                                    </div>
+                                </div>
+
+                                <div class="set-bond-clear"></div>
+                            </div>
+                            <div class="set-bond-item">
+                                <div class="item-list">
+                                    <label>固定键长：</label>
+                                    <input value="1.058" type="text" id="set_gen_bond_len" />
+                                    <p class="set-error-info"></p>
+                                </div>
+                                <div class="item-list">
+                                    <label>粗化学键宽度：</label>
+                                    <input value="0.141" type="text" id="set_bold_bond_width" />
+                                    <p class="set-error-info"></p>
+                                </div>
+                                <div class="item-list">
+                                    <label>线条宽度：</label>
+                                    <input value="0.035" type="text" id="set_gen_bond_width" />
+                                    <p class="set-error-info"></p>
+                                </div>
+                                <div class="set-bond-clear"></div>
+                            </div>
+                            <div class="set-bond-item">
+                                <div class="item-list">
+                                    <label>边界宽度：</label>
+                                    <input value="0.071" type="text" id="set_margin_width" />
+                                    <p class="set-error-info"></p>
+                                </div>
+                                <div class="item-list">
+                                    <label>虚线间距：</label>
+                                    <input value="0.095" type="text" id="set_hash_width" />
+                                    <p class="set-error-info"></p>
+                                </div>
+                                <div class="item-list">
+                                    <label>单位：</label>
+                                    <select id="set-bond-unit">
+                                        <option value="cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="pt">pt</option>
+                                        <option value="px">px</option>
+                                    </select>
+                                </div>
+                                <div class="set-bond-clear"></div>
+                            </div>
+                        </div>
+                        <div class="set-arrow-container set-item-container">
+                            <ul>
+                                <li>
+                                    <label>线条宽度：</label><input type="text" value="0.035" id="set-arrow-line-width" />
+                                    <p class="set-error-info"></p>
+                                </li>
+                                <li>
+                                    <label>默认长度：</label><input type="text" value="2.12" id="set-arrow-length" />
+                                    <p class="set-error-info"></p>
+                                </li>
+                                <li>
+                                    <label>头部宽度：</label><input type="text" value="0.159" id="set-arrow-head-width" />
+                                    <label style="margin-left: 25px;">单位：</label>
+                                    <select id="set-arrow-unit">
+                                        <option value="cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="pt">pt</option>
+                                        <option value="px">px</option>
+                                    </select>
+                                    <p class="set-error-info"></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="set-flowDiagram-container set-item-container">
+                            <ul>
+                                <li>
+                                    <label>线条宽度：</label><input type="text" value="0.035"
+                                        id="set-flowDiagram-line-width" />
+                                    <p class="set-error-info"></p>
+                                </li>
+                                <li>
+                                    <label>默认长度：</label><input type="text" value="2.12" id="set-flowDiagram-length" />
+                                    <p class="set-error-info"></p>
+                                </li>
+                                <li>
+                                    <label>默认宽度：</label><input type="text" value="1.06" id="set-flowDiagram-width" />
+                                    <label style="margin-left: 25px;">单位：</label>
+                                    <select id="set-flowDiagram-unit">
+                                        <option value="cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="pt">pt</option>
+                                        <option value="px">px</option>
+                                    </select>
+                                    <p class="set-error-info"></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="set-error-container set-item-container">
+                            <input type="radio" name="set-error" checked="true" value="show" /><label>显示报错提示</label>
+                            <input type="radio" name="set-error" class="second" value="hidden" /><label>隐藏报错提示</label>
+                        </div>
+                        <div class="set-confirm">
+                            <button id="set-button-confirm">确定</button>
+                            <button id="set-button-cancel">重置</button>
+                        </div>
+                        <p class="set-confirm-status"></p>
+                    </div>
+                    <div class="set-body-clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="src/js/sbcs.js?v=20180306"></script>
+    <script type="text/javascript" src="src/js/cputils.js?v=20180306"></script>
+    <script type="text/javascript" src="src/js/cptable_54936.js?v=20180306"></script>
+    <script type="text/javascript" src="src/js/lib.js?v=20180306"></script>
+    <script type="text/javascript" src="src/js/core.js?v=20180828"></script>
+    <!--<script type="text/javascript" src="src/js/constStr.js"></script>--> <!--add by hkk 2019/3/29 -->
+    <script type="text/javascript" src="src/js/chemSet.js"></script> <!--add by hkk 2019/4/4 右键设置无法使用-->
+    <script>
+        if (!window.console) {
+            window.console = {}
+            console.log = function () { };
+        }
+
+        //加载之后的操作。由于有时候加载之后并不会执行ready中的事件。所以另外加一个check保险;
+        window.loadedFn = function () {
+            console.log(1111)
+            InDraw.eln = true;
+            InDraw.indrawForeln = true;
+
+            var indraw = InDraw.mol.init();
+            window.indraw = indraw;
+        };
+
+
+        $(loadedFn);
+    </script>
+
+
+    <style>
+        .opacity1 {
+            opacity: 1 !important;
+        }
+
+        .shown {
+            display: block !important;
+            opacity: 1 !important;
+        }
+    </style>
+
+</body>
+
+</html>

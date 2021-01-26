@@ -1,0 +1,74 @@
+.carousel {
+  &__slide {
+    width: 100vw;
+    height: calc(100vh - 48px);
+    background-color: #e1faf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    font-size: 15rem;
+    width: 80vw;
+    height: 60vh;
+    display: flex;
+  }
+  &__context {
+    width: 48vw;
+    flex: 6;
+  }
+  &__title {
+      animation: ease-in-left 0.8s ease-in ;
+    height: 30vh;
+  }
+  &__main {
+    height: 30vh;
+    font-size: 4rem;
+    animation: ease-in-left 0.85s ease-in 0.2s;
+
+  }
+  &__photo {
+    height: 60vh;
+    width: 32vw;
+    flex: 4;
+    background-color: aqua;
+    animation: ease-in-right 0.8s ease-in ;
+    position: relative;
+  }
+  &__photo:hover &__video{
+    display: block;
+  }
+  &__video{
+    display: none;
+    height: 60vh;
+    width: 32vw;
+    background-color: black;
+    position: absolute;
+  }
+}
+@keyframes ease-in-left{
+    0%{
+        transform: translateX(-10vw);
+        opacity: 0.2;
+    }
+    80%{
+      opacity: 0.4;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes ease-in-right{
+    0%{
+        transform: translateX(10vw);
+        opacity: 0.2;
+    }
+    80%{
+      opacity: 0.4;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

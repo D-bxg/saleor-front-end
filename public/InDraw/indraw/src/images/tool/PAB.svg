@@ -1,0 +1,120 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="93.28399999999999" height="210" x="0" y="0" viewBox="566.8580000000001 276.5 93.28399999999999 204">
+    <defs>
+        <linearGradient id="nGcJJThHDalF" x1="-69.28399999999999" x2="-34.64" y1="80" y2="60"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="pgkPiCFUQacX" x1="-34.64" x2="-34.64" y1="60" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="TDJHnumWsEWg" x1="-34.64" x2="0" y1="20" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="UBsfyPtzGLRk" x1="-34.64" x2="-69.28399999999999" y1="20" y2="0"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="ZywMwAqBDTkV" x1="-69.28399999999999" x2="-69.28399999999999" y1="0" y2="-40"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="nLMTlEUscsLK" x1="-69.28399999999999" x2="-34.64" y1="-40" y2="-60"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="FIxkSALhuMrw" x1="-34.64" x2="-34.64" y1="-60" y2="-100" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#304ff7"></stop>
+        </linearGradient>
+        <linearGradient id="ymlAgCZuHGoZ" x1="-34.64" x2="0" y1="-60" y2="-40" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="pMlUWAURcqnU" x1="0" x2="0" y1="-40" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <g>
+            <rect fill="rgb(255,255,255)" stroke="none" x="-81.28399999999999" y="-112" width="93.28399999999999"
+                  height="204" fill-opacity="0"></rect>
+        </g>
+        <g transform="matrix(1,0,0,1,648.142,388.5)">
+            <g>
+                <text fill="#000000" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="-76.14459570312499" y="80" text-anchor="start"
+                      dominant-baseline="central">R
+                </text>
+            </g>
+            <g>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="-34.64" y="-100" text-anchor="middle"
+                      dominant-baseline="central">N
+                </text>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="-20.91880859375" y="-100" text-anchor="middle"
+                      dominant-baseline="central">H
+                </text>
+                <g transform="translate(-1.1515606637286329,-11.111111111111114) scale(0.8888888888888888,0.8888888888888888)">
+                    <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="11px"
+                          font-style="normal" font-weight="bold" text-decoration="normal" x="-10.364045973557694"
+                          y="-100" text-anchor="middle" dominant-baseline="text-before-edge">2
+                    </text>
+                </g>
+            </g>
+            <g>
+                <path fill="url(#nGcJJThHDalF)" stroke="url(#nGcJJThHDalF)" paint-order="fill stroke markers"
+                      d=" M -61.8376387988319 75.7012116377046 L -34.64 60" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#pgkPiCFUQacX)" stroke="url(#pgkPiCFUQacX)" paint-order="fill stroke markers"
+                      d=" M -34.64 60 L -34.64 20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#TDJHnumWsEWg)" stroke="url(#TDJHnumWsEWg)" paint-order="fill stroke markers"
+                      d=" M -34.64 20 L 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#UBsfyPtzGLRk)" stroke="url(#UBsfyPtzGLRk)" paint-order="fill stroke markers"
+                      d=" M -34.640202062551595 11.917153617748044 L -62.28399999999999 -4.041625932793695 M -34.64 20 L -69.28399999999999 0"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#ZywMwAqBDTkV)" stroke="url(#ZywMwAqBDTkV)" paint-order="fill stroke markers"
+                      d=" M -69.28399999999999 0 L -69.28399999999999 -40" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#nLMTlEUscsLK)" stroke="url(#nLMTlEUscsLK)" paint-order="fill stroke markers"
+                      d=" M -62.28399999999996 -35.95837406720632 L -34.640202062551595 -51.91715361774804 M -69.28399999999999 -40 L -34.64 -60"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#FIxkSALhuMrw)" stroke="url(#FIxkSALhuMrw)" paint-order="fill stroke markers"
+                      d=" M -34.64 -60 L -34.64 -91" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#ymlAgCZuHGoZ)" stroke="url(#ymlAgCZuHGoZ)" paint-order="fill stroke markers"
+                      d=" M -34.64 -60 L 0 -40" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#pMlUWAURcqnU)" stroke="url(#pMlUWAURcqnU)" paint-order="fill stroke markers"
+                      d=" M -7 -35.95860739225637 L -7 -4.041392607743607 M 0 -40 L 0 0" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+        </g>
+    </g>
+</svg>

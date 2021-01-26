@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.5,18.5 C14.4035594,18.5 24.5,10.501709 24.5,9.5 C24.5,8.49829102 14.4035594,0.5 7.5,0.5 C0.596440628,0.5 0,6.1862915 0,9.5 C0,12.8137085 0.596440628,18.5 7.5,18.5 Z" id="path-1"></path>
+        <linearGradient x1="4.13807583%" y1="39.6071047%" x2="100%" y2="39.6071047%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.198086504" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-42.9%" y="-81.4%" width="185.7%" height="262.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="8.26137796%" y1="35.2756076%" x2="64.6286691%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.198086504" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-22.7%" y="-54.5%" width="145.5%" height="209.1%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="1" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <path d="M7.5,18.5 C14.4035594,18.5 24.5,10.515625 24.5,9.5 C24.5,8.484375 14.4035594,0.5 7.5,0.5 C0.596440628,0.5 0,6.1862915 0,9.5 C0,12.8137085 0.596440628,18.5 7.5,18.5 Z" id="path-7"></path>
+        <filter x="-42.9%" y="-81.4%" width="185.7%" height="262.9%" filterUnits="objectBoundingBox" id="filter-9">
+            <feGaussianBlur stdDeviation="3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-22.7%" y="-54.5%" width="145.5%" height="209.1%" filterUnits="objectBoundingBox" id="filter-10">
+            <feGaussianBlur stdDeviation="1" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="12" transform="translate(25.000000, 25.000000) scale(-1, 1) rotate(90.000000) translate(-25.000000, -25.000000) ">
+            <g id="Group-3">
+                <g id="Oval-+-Oval-+-Oval-Mask" transform="translate(0.000000, 15.500000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                    <path d="M7.5,17 C14.4035594,17 25,13.3137085 25,10 C25,6.6862915 14.4035594,3 7.5,3 C0.596440628,3 0,6.6862915 0,10 C0,13.3137085 0.596440628,17 7.5,17 Z" id="Oval" fill="#000000" mask="url(#mask-2)"></path>
+                    <path d="M8,15.0500002 C13.5228475,15.0500002 22,11.5239584 22,9.0250001 C22,6.52604177 13.5228475,4 8,4 C2.4771525,4 1,6.52604177 1,9.0250001 C1,11.5239584 2.4771525,15.0500002 8,15.0500002 Z" id="Oval" fill="url(#linearGradient-3)" filter="url(#filter-4)" mask="url(#mask-2)"></path>
+                    <path d="M6.09453916,10.5 C9.73660257,10.5 15.1890783,8.99264069 15.1890783,7.75 C15.1890783,6.50735931 9.73660257,5 6.09453916,5 C2.45247575,5 2,6.50735931 2,7.75 C2,8.99264069 2.45247575,10.5 6.09453916,10.5 Z" id="Oval" fill="url(#linearGradient-5)" filter="url(#filter-6)" mask="url(#mask-2)"></path>
+                </g>
+                <g id="Oval-+-Oval-+-Oval-Mask" transform="translate(37.500000, 25.000000) scale(-1, 1) translate(-37.500000, -25.000000) translate(25.000000, 15.500000)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <use id="Mask" fill="#000000" xlink:href="#path-7"></use>
+                    <path d="M7.5,17 C14.4035594,17 25,13.3137085 25,10 C25,6.6862915 14.4035594,3 7.5,3 C0.596440628,3 0,6.6862915 0,10 C0,13.3137085 0.596440628,17 7.5,17 Z" id="Oval" fill="#000000" mask="url(#mask-8)"></path>
+                    <path d="M8,15.0500002 C13.5228475,15.0500002 22,11.5239584 22,9.0250001 C22,6.52604177 13.5228475,4 8,4 C2.4771525,4 1,6.52604177 1,9.0250001 C1,11.5239584 2.4771525,15.0500002 8,15.0500002 Z" id="Oval" fill="url(#linearGradient-3)" filter="url(#filter-9)" mask="url(#mask-8)"></path>
+                    <path d="M6.09453916,10.5 C9.73660257,10.5 15.1890783,8.99264069 15.1890783,7.75 C15.1890783,6.50735931 9.73660257,5 6.09453916,5 C2.45247575,5 2,6.50735931 2,7.75 C2,8.99264069 2.45247575,10.5 6.09453916,10.5 Z" id="Oval" fill="url(#linearGradient-5)" filter="url(#filter-10)" mask="url(#mask-8)"></path>
+                </g>
+                <path d="M20.25,46.25 C23.1938344,46.25 27.2710302,44.5011795 31.5650398,41.6910626 C34.6661969,39.6615809 37.75,37.0229062 37.75,36.75 C37.75,36.5063621 34.7006168,34.1461286 31.5861409,32.3220102 C27.306651,29.8155543 23.2116761,28.25 20.25,28.25 C15.0449901,28.25 13.25,31.9493698 13.25,37.75 C13.25,43.1264897 14.9719674,46.25 20.25,46.25 Z" id="Oval" stroke="#000000" fill="#FFFFFF" transform="translate(25.500000, 37.250000) rotate(270.000000) translate(-25.500000, -37.250000) "></path>
+                <path d="M37.1202535,12.75 C37.0615932,12.6891158 36.9919094,12.6195848 36.9123412,12.5427269 C36.5893106,12.2307001 36.1295509,11.8225662 35.5876096,11.3694841 C34.2861177,10.281391 32.6969665,9.08413072 31.0602562,7.98598909 C26.6800624,5.04712241 22.6650139,3.25 19.75,3.25 C14.5449901,3.25 12.75,6.94936976 12.75,12.75 C12.75,18.5506302 14.5449901,22.25 19.75,22.25 C22.6650139,22.25 26.6800624,20.4528776 31.0602562,17.5140109 C32.6969665,16.4158693 34.2861177,15.218609 35.5876096,14.1305159 C36.1295509,13.6774338 36.5893106,13.2692999 36.9123412,12.9572731 C36.9919094,12.8804152 37.0615932,12.8108842 37.1202535,12.75 Z" id="Oval" stroke="#000000" fill="#FFFFFF" transform="translate(25.000000, 12.750000) rotate(90.000000) translate(-25.000000, -12.750000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,154 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250.844"
+     height="144" x="0" y="0" viewBox="497.578 306.5 250.844 144">
+    <defs>
+        <linearGradient id="MhtwbfcGMJWB" x1="173.204" x2="173.204" y1="60" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#304ff7"></stop>
+        </linearGradient>
+        <linearGradient id="JoHehyiVnCTw" x1="173.204" x2="138.56400000000002" y1="20" y2="0"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#304ff7"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="mToWODWuAKeN" x1="138.56400000000002" x2="138.56400000000002" y1="0" y2="-40"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#ff0d0d"></stop>
+        </linearGradient>
+        <linearGradient id="vcqzgTkPfeyv" x1="138.56400000000002" x2="103.924" y1="0" y2="20"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#ff0d0d"></stop>
+        </linearGradient>
+        <linearGradient id="UPCrTyiuVHgh" x1="103.924" x2="69.28399999999999" y1="20" y2="0"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#ff0d0d"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="inlwUDqLNCkE" x1="69.28399999999999" x2="34.64" y1="0" y2="20"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="TwkBBnTuwHxu" x1="34.64" x2="0" y1="20" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="xvflTiBTAxPX" x1="34.64" x2="34.64" y1="20" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="iWKQGXgpKFuV" x1="34.64" x2="0" y1="60" y2="80" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="pkUOHpFVyAnq" x1="0" x2="-34.64" y1="80" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="OKyLrhidHwwk" x1="-34.64" x2="-34.64" y1="60" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+        <linearGradient id="zbGREfExngki" x1="-34.64" x2="0" y1="20" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0.4" stop-color="#000000"></stop>
+            <stop offset="0.6" stop-color="#000000"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <g>
+            <rect fill="rgb(255,255,255)" stroke="none" x="-46.64" y="-52" width="231.844" height="144"
+                  fill-opacity="0"></rect>
+        </g>
+        <g transform="matrix(1,0,0,1,544.218,358.5)">
+            <g>
+                <text fill="#000000" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="166.343404296875" y="60" text-anchor="start"
+                      dominant-baseline="central">R
+                </text>
+            </g>
+            <g>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="173.204" y="20" text-anchor="middle"
+                      dominant-baseline="central">N
+                </text>
+                <text fill="#304ff7" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="186.92519140625" y="20" text-anchor="middle"
+                      dominant-baseline="central">H
+                </text>
+            </g>
+            <g>
+                <text fill="#ff0d0d" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="138.56400000000002" y="-40" text-anchor="middle"
+                      dominant-baseline="central">O
+                </text>
+            </g>
+            <g>
+                <text fill="#ff0d0d" stroke="none" font-family="arial, sans-serif" font-size="19px" font-style="normal"
+                      font-weight="bold" text-decoration="normal" x="103.924" y="20" text-anchor="middle"
+                      dominant-baseline="central">O
+                </text>
+            </g>
+            <g>
+                <path fill="url(#MhtwbfcGMJWB)" stroke="url(#MhtwbfcGMJWB)" paint-order="fill stroke markers"
+                      d=" M 173.204 51 L 173.204 29" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#JoHehyiVnCTw)" stroke="url(#JoHehyiVnCTw)" paint-order="fill stroke markers"
+                      d=" M 165.75791868567964 15.700876839306943 L 138.56400000000002 0" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#mToWODWuAKeN)" stroke="url(#mToWODWuAKeN)" paint-order="fill stroke markers"
+                      d=" M 142.06400000000002 2.020785219399542 L 142.06400000000002 -31 M 135.06400000000002 2.0207852193995373 L 135.06400000000002 -31"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#vcqzgTkPfeyv)" stroke="url(#vcqzgTkPfeyv)" paint-order="fill stroke markers"
+                      d=" M 138.56400000000002 0 L 111.37008131432037 15.700876839306947" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#UPCrTyiuVHgh)" stroke="url(#UPCrTyiuVHgh)" paint-order="fill stroke markers"
+                      d=" M 96.47791868567964 15.700876839306947 L 69.28399999999999 0" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#inlwUDqLNCkE)" stroke="url(#inlwUDqLNCkE)" paint-order="fill stroke markers"
+                      d=" M 69.28399999999999 0 L 34.64 20" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#TwkBBnTuwHxu)" stroke="url(#TwkBBnTuwHxu)" paint-order="fill stroke markers"
+                      d=" M 34.64 20 L 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#xvflTiBTAxPX)" stroke="url(#xvflTiBTAxPX)" paint-order="fill stroke markers"
+                      d=" M 27.64 24.041392607743596 L 27.64 55.958607392256376 M 34.64 20 L 34.64 60"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#iWKQGXgpKFuV)" stroke="url(#iWKQGXgpKFuV)" paint-order="fill stroke markers"
+                      d=" M 34.64 60 L 0 80" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#pkUOHpFVyAnq)" stroke="url(#pkUOHpFVyAnq)" paint-order="fill stroke markers"
+                      d=" M 4.94938741128742e-16 71.91703695345731 L -27.640000000000015 55.95860739225638 M 0 80 L -34.64 60"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#OKyLrhidHwwk)" stroke="url(#OKyLrhidHwwk)" paint-order="fill stroke markers"
+                      d=" M -34.64 60 L -34.64 20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      stroke-width="1.33"></path>
+            </g>
+            <g>
+                <path fill="url(#zbGREfExngki)" stroke="url(#zbGREfExngki)" paint-order="fill stroke markers"
+                      d=" M -27.639999999999993 24.0413926077436 L 4.949387411287417e-16 8.082963046542682 M -34.64 20 L 0 0"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.33"></path>
+            </g>
+        </g>
+    </g>
+</svg>
