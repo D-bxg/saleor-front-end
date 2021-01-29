@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ScrollMagic from 'scrollmagic'
 
 import "./index.min.css";
 
@@ -30,6 +31,9 @@ export default class Carousel extends Component {
       },
     ],
   };
+  // componentDidMount(){
+  //   let controller = new ScrollMagic.Controller()
+  // }
   render() {
     return (
       <Swiper
@@ -55,8 +59,8 @@ export default class Carousel extends Component {
                       <video
                         id="movies"
                         controls
-                        onMouseOver="this.play()"
-                        onMouseOut="this.pause()"
+                        // onMouseOver={this.play()}
+                        // onMouseOut={this.pause()}
                         autobuffer="true"
                         width="400px"
                         height="300px"

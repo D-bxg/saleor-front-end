@@ -1,0 +1,44 @@
+.box3d {
+  &__top {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(238, 58, 136, 1) 11.2%,
+      rgba(128, 162, 245, 1) 91.1%
+    );
+  }
+  &__bottom {
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(153, 103, 186, 1) 41.2%,
+      rgba(0, 113, 227, 1) 90%
+    );
+  }
+  &__left {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(238, 58, 136, 1) 11.2%,
+      rgba(128, 162, 245, 1) 91.1%
+    );
+  }
+  &__right {
+    background-image: linear-gradient(
+      114.2deg,
+      rgba(121, 194, 243, 1) 22.6%,
+      rgba(255, 180, 239, 1) 67.7%
+    );
+  }
+  &__front {
+    background-image: linear-gradient(
+      100.5deg,
+      rgba(148, 146, 236, 1) 17.7%,
+      rgba(245, 194, 194, 1) 76.1%
+    );
+  }
+  &__back {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(177, 173, 219, 1) 11.2%,
+      rgba(245, 226, 226, 1) 91.1%
+    );
+  }
+}

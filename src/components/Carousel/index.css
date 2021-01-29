@@ -36,7 +36,8 @@
   flex: 4;
   background-color: aqua;
   animation: ease-in-right 0.8s ease-in;
-  position: relative;
+  position: sticky;
+  top: 20vh;
 }
 
 .carousel__photo:hover .carousel__video {
