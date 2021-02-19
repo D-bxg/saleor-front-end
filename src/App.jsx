@@ -11,9 +11,9 @@ const client = new ApolloClient({
   }),
   cache: new InMemoryCache(),
 });
-
 export default class App extends PureComponent {
   render() {
+    
     return (
       <ApolloProvider client={client}>
         <Pages></Pages>

@@ -32,20 +32,21 @@ export default class Nav extends Component {
     return (
       <header className="header">
         <Link to="/">
-          <div key="logo" className="header__logo"></div>
+          <div key="logo" className="header__logo">
+          </div>
         </Link>
         <div className="header__div"></div>
         <div key="search" className="header__search">
-          <Search
+          {/* <Search
             placeholder="input search text"
             enterButton="Search"
             size="large"
             suffix={suffix}
             onSearch={this.onSearch}
-          />
+          /> */}
         </div>
         <div key="item" className="header__item">
-          <Menu style={{backgroundColor:"#a4ede1"}} onClick={this.handleClick} mode="horizontal">
+          <Menu style={{backgroundColor:"rgba(102, 51, 153, 0)",color:"#000",}} onClick={this.handleClick} mode="horizontal">
             <SubMenu key="detail" icon={<AppstoreOutlined />} title="应用">
               <Menu.ItemGroup title="应用">
                 <Menu.Item key="afp">

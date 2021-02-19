@@ -8,6 +8,8 @@ import "./index.min.css";
 
 import Box3D from "../../components/Box3D";
 
+import Home from '../../Test/home'
+
 // ScrollMagicPluginGsap(ScrollMagic, TweenMax);
 
 const client = new ApolloClient({
@@ -51,13 +53,8 @@ class Test extends PureComponent {
     // const { Test } = this.props;
     return (
       <div className="">
-        <Box3D
-          size="50px"
-          rotateX="70deg"
-          rotateY="70deg"
-          top="40vh"
-          left="50vw"
-        ></Box3D>
+
+        <Home />
       </div>
     );
   }

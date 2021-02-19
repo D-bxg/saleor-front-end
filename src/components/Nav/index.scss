@@ -1,10 +1,14 @@
+.ant-menu-submenu-title span{
+  font-weight: bolder ;
+}
+
 .header {
   width: calc(100vw - 17px);
   height: auto;
   display: flex;
   position: sticky;
   top: 0;
-  background-color: #a4ede1;
+  background-color: #a4ede1c9;
   z-index: 900;
   &__item {
     flex: 6;
@@ -13,7 +17,6 @@
     flex: 4;
     width: 16rem;
     height: 4.8rem;
-    background-color: aqua;
   }
   &__search {
     display: flex;

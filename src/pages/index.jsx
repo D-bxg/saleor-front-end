@@ -17,7 +17,7 @@ export default class index extends Component {
           <Route path="/test" component={Test}/>
           <Route path="/" component={Home} />
         </Switch>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </Fragment>
     );
   }
