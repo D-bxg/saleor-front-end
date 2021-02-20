@@ -161,6 +161,15 @@
     cursor: pointer;
     transform-style: preserve-3d;
     perspective: 30cm;
+    &--under {
+      top: -5vh;
+      height: 60vh;
+      width: 32vw;
+      position: absolute;
+      z-index: -1;
+      transform-style: preserve-3d;
+      perspective: 30cm;
+    }
   }
   &__photo img {
     width: 100%;
@@ -196,16 +205,16 @@
     // box-shadow: 0px 0px 30px rgba(90, 90, 90, 0.774);
   }
   &__pa {
-    transform: translateX(-15vw) translateY(-23vw) translateZ(-100px)
+    transform: translateX(-13vw) translateY(-20vw) translateZ(-100px)
       rotateY(-10deg) rotateX(10deg);
   }
   &__pb {
-    transform: translateX(24vw) translateY(-19vw) translateZ(-100px)
+    transform: translateX(24vw) translateY(-14vw) translateZ(-100px)
       rotateY(10deg) rotateX(10deg);
   }
   &__pc {
     width: 10vw;
-    transform: translateX(-3vw) translateY(10vw) translateZ(100px)
+    transform: translateX(-3vw) translateY(10vw) translateZ(80px)
       rotateY(-20deg) rotateX(30deg);
   }
   &__pd {
@@ -235,9 +244,8 @@
     // background-color: rgba(29, 190, 177, 0.287);
     transition: all 0.4s ease-in-out;
     padding: 1%;
-
   }
-  &__p{
+  &__p {
     font-size: 30px;
     font-weight: bold;
     line-height: 30px;
@@ -247,9 +255,8 @@
   &__l2,
   &__l3,
   &__l4,
-  &__l5 div{
-    font-size: 20px;
-
+  &__l5 div {
+    font-size: 18px;
   }
   &__l1 {
   }

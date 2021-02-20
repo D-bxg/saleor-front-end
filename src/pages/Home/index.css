@@ -125,6 +125,16 @@
   perspective: 30cm;
 }
 
+.home__photo--under {
+  top: -5vh;
+  height: 60vh;
+  width: 32vw;
+  position: absolute;
+  z-index: -1;
+  transform-style: preserve-3d;
+  perspective: 30cm;
+}
+
 .home__photo img {
   width: 100%;
 }
@@ -154,16 +164,16 @@
 }
 
 .home__pa {
-  transform: translateX(-15vw) translateY(-23vw) translateZ(-100px) rotateY(-10deg) rotateX(10deg);
+  transform: translateX(-13vw) translateY(-20vw) translateZ(-100px) rotateY(-10deg) rotateX(10deg);
 }
 
 .home__pb {
-  transform: translateX(24vw) translateY(-19vw) translateZ(-100px) rotateY(10deg) rotateX(10deg);
+  transform: translateX(24vw) translateY(-14vw) translateZ(-100px) rotateY(10deg) rotateX(10deg);
 }
 
 .home__pc {
   width: 10vw;
-  transform: translateX(-3vw) translateY(10vw) translateZ(100px) rotateY(-20deg) rotateX(30deg);
+  transform: translateX(-3vw) translateY(10vw) translateZ(80px) rotateY(-20deg) rotateX(30deg);
 }
 
 .home__pd {
@@ -200,7 +210,7 @@
 
 .home-list__l1, .home-list__l2, .home-list__l3, .home-list__l4,
 .home-list__l5 div {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .home-list__l1:hover, .home-list__l2:hover, .home-list__l3:hover, .home-list__l4:hover, .home-list__l5:hover {

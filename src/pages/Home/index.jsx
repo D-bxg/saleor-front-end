@@ -31,6 +31,18 @@ export default class Home extends PureComponent {
       photo: ADMET,
       video: "http://39.99.151.46:3000/media/swiper/media/Admet-video.mp4",
     });
+    // let elem=document.getElementById('movies');// 获得video
+    // let id = elem.attributes["id"].value;
+    // let autobuffer = elem.attributes["autobuffer"].value;
+    // let width = elem.attributes["width"].value;
+    // elem.parentNode.removeChild(elem);// 删除video
+    // let frameDiv = document.createElement("video");//创建一个video
+    // let bodyFa = document.getElementById("movies-div");//通过id号获取video的父类（也就是上一级的节点）
+    // bodyFa.appendChild(frameDiv);//把创建的节点video添加到父类中；
+    // frameDiv.setAttribute("id", id);//给创建的div设置id值；
+    // frameDiv.setAttribute("autobuffer", autobuffer);
+    // frameDiv.setAttribute("width", width);
+    // frameDiv.className="divclass"; //给创建的div设置class；
   };
   mouseOverL2 = () => {
     this.setState({
@@ -46,25 +58,32 @@ export default class Home extends PureComponent {
   };
   mouseOverL4 = () => {
     this.setState({
-      photo: KinomeX,
-      video: "http://39.99.151.46:3000/media/swiper/media/Kinome-video.mp4",
-    });
-  };
-  mouseOverL5 = () => {
-    this.setState({
       photo: SCAFFHOP,
       video: "http://39.99.151.46:3000/media/swiper/media/ScaffHop-video.mp4",
     });
   };
+  mouseOverL5 = () => {
+    this.setState({
+      photo: KinomeX,
+      video: "http://39.99.151.46:3000/media/swiper/media/Kinome-video.mp4",
+    });
+  };
   componentDidMount() {
-    VanillaTilt.init(document.querySelector(".home__image"), {
-      max: 25,
-      speed: 400,
+    VanillaTilt.init(document.querySelector(".home__photo--under"), {
+      max: 10,
+      speed: 600,
     });
     let controller = new ScrollMagic.Controller();
 
     var tween1 = TweenMax.staggerFromTo(
-      [".home__pa", ".home__pb", ".home__pc", ".home__pd", ".home__pe"],
+      [
+        ".home__pa",
+        ".home__pb",
+        ".home__pc",
+        ".home__pd",
+        ".home__pe",
+        ".home__photo--under",
+      ],
       0.01,
       {},
       {
@@ -122,20 +141,22 @@ export default class Home extends PureComponent {
                     this.setState({ visible: !this.state.visible })
                   }
                 >
-                  <div className="home__pa" onMouseOver={this.mouseOverL1}>
-                    <img src={ADMET} alt="photo" />
-                  </div>
-                  <div className="home__pb" onMouseOver={this.mouseOverL2}>
-                    <img src={COCRYSTAL} alt="photo" />
-                  </div>
-                  <div className="home__pc" onMouseOver={this.mouseOverL3}>
-                    <img src={GENERATIVE} alt="photo" />
-                  </div>
-                  <div className="home__pd" onMouseOver={this.mouseOverL4}>
-                    <img src={SCAFFHOP} alt="photo" />
-                  </div>
-                  <div className="home__pe" onMouseOver={this.mouseOverL5}>
-                    <img src={KinomeX} alt="photo" />
+                  <div id="home__photo" className="home__photo--under">
+                    <div className="home__pa" onMouseOver={this.mouseOverL1}>
+                      <img src={ADMET} alt="photo" />
+                    </div>
+                    <div className="home__pb" onMouseOver={this.mouseOverL2}>
+                      <img src={COCRYSTAL} alt="photo" />
+                    </div>
+                    <div className="home__pc" onMouseOver={this.mouseOverL3}>
+                      <img src={GENERATIVE} alt="photo" />
+                    </div>
+                    <div className="home__pd" onMouseOver={this.mouseOverL4}>
+                      <img src={SCAFFHOP} alt="photo" />
+                    </div>
+                    <div className="home__pe" onMouseOver={this.mouseOverL5}>
+                      <img src={KinomeX} alt="photo" />
+                    </div>
                   </div>
 
                   <img src={this.state.photo} alt="photo" />
@@ -149,7 +170,7 @@ export default class Home extends PureComponent {
                     }
                     width={"auto"}
                   >
-                    <div className="home__video">
+                    <div id="movies-div" className="home__video">
                       <video
                         id="movies"
                         controls
@@ -158,6 +179,7 @@ export default class Home extends PureComponent {
                         autobuffer="true"
                         width="1000px"
                       >
+                        {this.state.video}
                         <source src={this.state.video} type="video/mp4" />
                         您的浏览器不支持video标签。
                       </video>
@@ -179,7 +201,7 @@ export default class Home extends PureComponent {
                     properties of compounds.
                   </div>
                 </div>
-                <div className="home-list__l2" onMouseOver={this.mouseOverL2}>
+                <div className="home-list__l2" onMouseOver={this.mouseOverL5}>
                   <p className="home-list__p">αKinomeX</p>
                   <div>
                     An application to predict kinome-wide polypharmacology
@@ -203,7 +225,7 @@ export default class Home extends PureComponent {
                     expert-defined transformations to an initial compound.
                   </div>
                 </div>
-                <div className="home-list__l5" onMouseOver={this.mouseOverL5}>
+                <div className="home-list__l5" onMouseOver={this.mouseOverL2}>
                   <p className="home-list__p">αCoCrystal</p>
                   <div>
                     A machine-learning model trained on the whole Cambridge
